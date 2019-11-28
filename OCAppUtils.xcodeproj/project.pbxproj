@@ -16,6 +16,13 @@
 		5122AD41238F62AA00392321 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD40238F62AA00392321 /* main.m */; };
 		5122AD4B238F62AB00392321 /* OCAppUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD4A238F62AB00392321 /* OCAppUtilsTests.m */; };
 		5122AD56238F62AB00392321 /* OCAppUtilsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD55238F62AB00392321 /* OCAppUtilsUITests.m */; };
+		5145685E238F9297008BFA59 /* AppDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145685D238F9297008BFA59 /* AppDeviceInfo.m */; };
+		5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145686A238FA694008BFA59 /* BaseTabBarViewController.m */; };
+		51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456872238FAD70008BFA59 /* BaseNavigationController.m */; };
+		51456876238FADEB008BFA59 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456875238FADEB008BFA59 /* BaseViewController.m */; };
+		51456879238FAF09008BFA59 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456878238FAF09008BFA59 /* BaseTableViewController.m */; };
+		5145687C238FB241008BFA59 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145687B238FB241008BFA59 /* BaseWebViewController.m */; };
+		5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145687E238FB4BD008BFA59 /* BaseCustomTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,23 @@
 		5122AD51238F62AB00392321 /* OCAppUtilsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCAppUtilsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5122AD55238F62AB00392321 /* OCAppUtilsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAppUtilsUITests.m; sourceTree = "<group>"; };
 		5122AD57238F62AB00392321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5122AD6D238F6EB700392321 /* AppUtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppUtilsMacro.h; path = ../../../../AppUtilsMacro.h; sourceTree = "<group>"; };
+		5145685C238F9297008BFA59 /* AppDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDeviceInfo.h; sourceTree = "<group>"; };
+		5145685D238F9297008BFA59 /* AppDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDeviceInfo.m; sourceTree = "<group>"; };
+		51456864238FA56D008BFA59 /* OCAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAppUtils.h; sourceTree = "<group>"; };
+		51456866238FA626008BFA59 /* AppUtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppUtilsMacro.h; sourceTree = "<group>"; };
+		51456869238FA694008BFA59 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
+		5145686A238FA694008BFA59 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
+		51456871238FAD70008BFA59 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		51456872238FAD70008BFA59 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		51456874238FADEB008BFA59 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		51456875238FADEB008BFA59 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		51456877238FAF09008BFA59 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		51456878238FAF09008BFA59 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		5145687A238FB241008BFA59 /* BaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		5145687B238FB241008BFA59 /* BaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		5145687D238FB4BD008BFA59 /* BaseCustomTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCustomTableViewController.h; sourceTree = "<group>"; };
+		5145687E238FB4BD008BFA59 /* BaseCustomTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCustomTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +128,8 @@
 		5122AD2D238F62A900392321 /* OCAppUtils */ = {
 			isa = PBXGroup;
 			children = (
+				5122AD64238F689B00392321 /* MVVM */,
+				5122AD63238F67AD00392321 /* Core */,
 				5122AD2E238F62AA00392321 /* AppDelegate.h */,
 				5122AD2F238F62AA00392321 /* AppDelegate.m */,
 				5122AD31238F62AA00392321 /* SceneDelegate.h */,
@@ -135,6 +161,61 @@
 				5122AD57238F62AB00392321 /* Info.plist */,
 			);
 			path = OCAppUtilsUITests;
+			sourceTree = "<group>";
+		};
+		5122AD63238F67AD00392321 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				51456868238FA63C008BFA59 /* Base */,
+				51456867238FA62A008BFA59 /* Category */,
+				51456865238FA61F008BFA59 /* Tool */,
+				5122AD6D238F6EB700392321 /* AppUtilsMacro.h */,
+				51456864238FA56D008BFA59 /* OCAppUtils.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5122AD64238F689B00392321 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		51456865238FA61F008BFA59 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				51456866238FA626008BFA59 /* AppUtilsMacro.h */,
+				5145685C238F9297008BFA59 /* AppDeviceInfo.h */,
+				5145685D238F9297008BFA59 /* AppDeviceInfo.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		51456867238FA62A008BFA59 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		51456868238FA63C008BFA59 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				51456869238FA694008BFA59 /* BaseTabBarViewController.h */,
+				5145686A238FA694008BFA59 /* BaseTabBarViewController.m */,
+				51456871238FAD70008BFA59 /* BaseNavigationController.h */,
+				51456872238FAD70008BFA59 /* BaseNavigationController.m */,
+				51456874238FADEB008BFA59 /* BaseViewController.h */,
+				51456875238FADEB008BFA59 /* BaseViewController.m */,
+				51456877238FAF09008BFA59 /* BaseTableViewController.h */,
+				51456878238FAF09008BFA59 /* BaseTableViewController.m */,
+				5145687A238FB241008BFA59 /* BaseWebViewController.h */,
+				5145687B238FB241008BFA59 /* BaseWebViewController.m */,
+				5145687D238FB4BD008BFA59 /* BaseCustomTableViewController.h */,
+				5145687E238FB4BD008BFA59 /* BaseCustomTableViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +348,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */,
+				51456879238FAF09008BFA59 /* BaseTableViewController.m in Sources */,
+				51456876238FADEB008BFA59 /* BaseViewController.m in Sources */,
+				5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */,
+				51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */,
 				5122AD36238F62AA00392321 /* ViewController.m in Sources */,
 				5122AD30238F62AA00392321 /* AppDelegate.m in Sources */,
 				5122AD41238F62AA00392321 /* main.m in Sources */,
+				5145685E238F9297008BFA59 /* AppDeviceInfo.m in Sources */,
+				5145687C238FB241008BFA59 /* BaseWebViewController.m in Sources */,
 				5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

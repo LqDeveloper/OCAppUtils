@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AppTabBarViewController.h
 //  OCAppUtils
 //
 //  Created by Quan Li on 2019/11/28.
@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseCustomTableViewController.h"
-@interface ViewController :BaseCustomTableViewController<UITableView *>
 
+NS_ASSUME_NONNULL_BEGIN
+
+@interface BaseTabBarViewController : UITabBarController
 
 @end
 
+NS_ASSUME_NONNULL_END
