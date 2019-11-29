@@ -30,6 +30,7 @@
 		513890B223911F610086960D /* AppKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890B123911F610086960D /* AppKeyboardObserver.m */; };
 		513890B523911F9D0086960D /* AppCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890B423911F9D0086960D /* AppCountDownButton.m */; };
 		513890B823911FC60086960D /* NetworkManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890B723911FC60086960D /* NetworkManagerViewController.m */; };
+		513890C02391256F0086960D /* AppFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890BF2391256F0086960D /* AppFileManager.m */; };
 		5145685E238F9297008BFA59 /* AppDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145685D238F9297008BFA59 /* AppDeviceInfo.m */; };
 		5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145686A238FA694008BFA59 /* BaseTabBarViewController.m */; };
 		51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456872238FAD70008BFA59 /* BaseNavigationController.m */; };
@@ -118,6 +119,8 @@
 		513890B423911F9D0086960D /* AppCountDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCountDownButton.m; sourceTree = "<group>"; };
 		513890B623911FC60086960D /* NetworkManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManagerViewController.h; sourceTree = "<group>"; };
 		513890B723911FC60086960D /* NetworkManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManagerViewController.m; sourceTree = "<group>"; };
+		513890BE2391256F0086960D /* AppFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFileManager.h; sourceTree = "<group>"; };
+		513890BF2391256F0086960D /* AppFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFileManager.m; sourceTree = "<group>"; };
 		5145685C238F9297008BFA59 /* AppDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDeviceInfo.h; sourceTree = "<group>"; };
 		5145685D238F9297008BFA59 /* AppDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDeviceInfo.m; sourceTree = "<group>"; };
 		51456864238FA56D008BFA59 /* OCAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAppUtils.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				513890B423911F9D0086960D /* AppCountDownButton.m */,
 				513890B623911FC60086960D /* NetworkManagerViewController.h */,
 				513890B723911FC60086960D /* NetworkManagerViewController.m */,
+				513890BE2391256F0086960D /* AppFileManager.h */,
+				513890BF2391256F0086960D /* AppFileManager.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				5138908C239104650086960D /* UITableView+Category.m in Sources */,
 				5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */,
 				51E3D293238FD78D0074449B /* UIImage+Category.m in Sources */,
+				513890C02391256F0086960D /* AppFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
