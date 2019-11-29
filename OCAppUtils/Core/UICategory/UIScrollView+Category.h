@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIScrollView (Category)
-
+@property(nonatomic,strong,readonly)UIImage *screenshot;
 @end
 
 NS_ASSUME_NONNULL_END

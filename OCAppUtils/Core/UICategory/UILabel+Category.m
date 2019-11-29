@@ -9,5 +9,17 @@
 #import "UILabel+Category.h"
 
 @implementation UILabel (Category)
++(UILabel *)label:(NSString *)text textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment{
+    UILabel *label = [[UILabel alloc]init];
+    label.text = text;
+    label.textColor = color;
+    label.textAlignment = alignment;
+    return label;
+}
 
++(UILabel *)label:(NSString *)text textColor:(UIColor *)color backgroundColor:(UIColor *)bgColor textAlignment:(NSTextAlignment)alignment{
+    UILabel *label = [UILabel label:text textColor:color textAlignment:alignment];
+    label.backgroundColor = bgColor;
+    return label;
+}
 @end

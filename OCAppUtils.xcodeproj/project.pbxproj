@@ -16,6 +16,8 @@
 		5122AD41238F62AA00392321 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD40238F62AA00392321 /* main.m */; };
 		5122AD4B238F62AB00392321 /* OCAppUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD4A238F62AB00392321 /* OCAppUtilsTests.m */; };
 		5122AD56238F62AB00392321 /* OCAppUtilsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD55238F62AB00392321 /* OCAppUtilsUITests.m */; };
+		5138908C239104650086960D /* UITableView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5138908B239104650086960D /* UITableView+Category.m */; };
+		5138908F239104D60086960D /* UICollectionView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5138908E239104D60086960D /* UICollectionView+Category.m */; };
 		5145685E238F9297008BFA59 /* AppDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145685D238F9297008BFA59 /* AppDeviceInfo.m */; };
 		5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145686A238FA694008BFA59 /* BaseTabBarViewController.m */; };
 		51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456872238FAD70008BFA59 /* BaseNavigationController.m */; };
@@ -76,6 +78,10 @@
 		5122AD55238F62AB00392321 /* OCAppUtilsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAppUtilsUITests.m; sourceTree = "<group>"; };
 		5122AD57238F62AB00392321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5122AD6D238F6EB700392321 /* AppUtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppUtilsMacro.h; path = ../../../../AppUtilsMacro.h; sourceTree = "<group>"; };
+		5138908A239104650086960D /* UITableView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Category.h"; sourceTree = "<group>"; };
+		5138908B239104650086960D /* UITableView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Category.m"; sourceTree = "<group>"; };
+		5138908D239104D60086960D /* UICollectionView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Category.h"; sourceTree = "<group>"; };
+		5138908E239104D60086960D /* UICollectionView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Category.m"; sourceTree = "<group>"; };
 		5145685C238F9297008BFA59 /* AppDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDeviceInfo.h; sourceTree = "<group>"; };
 		5145685D238F9297008BFA59 /* AppDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDeviceInfo.m; sourceTree = "<group>"; };
 		51456864238FA56D008BFA59 /* OCAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAppUtils.h; sourceTree = "<group>"; };
@@ -268,6 +274,10 @@
 				51E3D29E238FD8BB0074449B /* UIScrollView+Category.m */,
 				51E3D2A0238FD8EC0074449B /* UIStackView+Category.h */,
 				51E3D2A1238FD8EC0074449B /* UIStackView+Category.m */,
+				5138908A239104650086960D /* UITableView+Category.h */,
+				5138908B239104650086960D /* UITableView+Category.m */,
+				5138908D239104D60086960D /* UICollectionView+Category.h */,
+				5138908E239104D60086960D /* UICollectionView+Category.m */,
 			);
 			path = UICategory;
 			sourceTree = "<group>";
@@ -443,6 +453,7 @@
 				51456886238FBEA0008BFA59 /* UIView+Category.m in Sources */,
 				51456876238FADEB008BFA59 /* BaseViewController.m in Sources */,
 				5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */,
+				5138908F239104D60086960D /* UICollectionView+Category.m in Sources */,
 				51E3D2A2238FD8EC0074449B /* UIStackView+Category.m in Sources */,
 				51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */,
 				51E3D29C238FD86F0074449B /* UITextField+Category.m in Sources */,
@@ -459,6 +470,7 @@
 				51E3D29F238FD8BB0074449B /* UIScrollView+Category.m in Sources */,
 				5145687C238FB241008BFA59 /* BaseWebViewController.m in Sources */,
 				51E3D287238FD51A0074449B /* UIApplication+Category.m in Sources */,
+				5138908C239104650086960D /* UITableView+Category.m in Sources */,
 				5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */,
 				51E3D293238FD78D0074449B /* UIImage+Category.m in Sources */,
 			);

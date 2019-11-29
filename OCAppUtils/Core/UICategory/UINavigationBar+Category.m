@@ -9,5 +9,16 @@
 #import "UINavigationBar+Category.h"
 
 @implementation UINavigationBar (Category)
+-(void)setTitleFont:(UIFont *)font color:(UIColor *)color{
+    NSMutableDictionary *attr = [NSMutableDictionary dictionary];
+    attr[NSFontAttributeName] = font;
+    attr[NSForegroundColorAttributeName] = color;
+    self.titleTextAttributes = attr;
+}
 
+- (void)setTitleFont:(UIFont *)font color:(UIColor *)color backgroundColor:(UIColor *)bgColor{
+    [self setTitleFont:font color:color];
+    self.translucent = NO;
+    self.barTintColor = bgColor;
+}
 @end

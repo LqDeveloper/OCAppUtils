@@ -37,4 +37,6 @@
 #import "UITextField+Category.h"
 #import "UIScrollView+Category.h"
 #import "UIStackView+Category.h"
+#import "UITableView+Category.h"
+#import "UICollectionView+Category.h"
 #endif /* OCAppUtils_h */

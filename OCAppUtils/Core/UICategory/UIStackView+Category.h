@@ -10,7 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIStackView (Category)
++(UIStackView*)createStateView:(UILayoutConstraintAxis)axis spacing:(CGFloat)spacing alignment:(UIStackViewAlignment)alignment distribution:(UIStackViewDistribution)distribution;
 
+-(void)addArrangedSubviews:(NSArray<UIView *> *)views;
+-(void)removeArrangedSubviews;
 @end
 
 NS_ASSUME_NONNULL_END
