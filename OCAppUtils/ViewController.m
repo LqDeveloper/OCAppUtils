@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2019/11/28.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -17,19 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppLog(@"%f",ScreenWidth);
-    AppLog(@"%f",ScreenHeight);
-    AppLog(@"%f",NavigationHeight);
-    AppLog(@"%f",StatusBarHeight);
-    AppLog(@"%f",TabBarHeight);
-    AppLog(@"%f",TopSpace);
-    AppLog(@"%f",BottomSpace);
-    AppLog(@"%f",ScreenHeight);
-    
-    AppLog(@"%d",IsPhone);
-    AppLog(@"%d",IsPad);
-    AppLog(@"%d",IsPhone5Series);
-    AppLog(@"%d",IsPhoneXSeries);
+    AppLog(@"%ld",[NSDate date].quarter);
 }
 
 -(void)printDeviceInfo{
@@ -63,6 +51,20 @@
     AppLog(@"沙盒路径:%@",AppDeviceInfo.rootPath);
     AppLog(@"内存总容量:%ld",AppDeviceInfo.volumeTotalCapacity);
     AppLog(@"可用内存容量:%ld",AppDeviceInfo.volumeAvailableCapacity);
+    
+    AppLog(@"%f",ScreenWidth);
+    AppLog(@"%f",ScreenHeight);
+    AppLog(@"%f",NavigationHeight);
+    AppLog(@"%f",StatusBarHeight);
+    AppLog(@"%f",TabBarHeight);
+    AppLog(@"%f",TopSpace);
+    AppLog(@"%f",BottomSpace);
+    AppLog(@"%f",ScreenHeight);
+    
+    AppLog(@"%d",IsPhone);
+    AppLog(@"%d",IsPad);
+    AppLog(@"%d",IsPhone5Series);
+    AppLog(@"%d",IsPhoneXSeries);
 }
 
 @end

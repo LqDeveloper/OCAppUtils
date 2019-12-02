@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2019/11/29.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Category)
+/// 将字符串转为Data
+@property(nonatomic,strong,readonly)NSData *data;
+/// 将字符串转为字典
+@property(nonatomic,strong,readonly)NSDictionary *json;
 /// 字符串范围
 @property(nonatomic,assign,readonly)NSRange range;
 /// base64 解密
@@ -19,8 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy,readonly)NSString *base64Encoded;
 /// MD5 加密
 @property(nonatomic,copy,readonly)NSString *md5;
-/// 移除换行空格
+/// 移除字符串中所有的换行和空格
 @property(nonatomic,copy,readonly)NSString *removeSpace;
+///移除开头和结尾的空格
+@property(nonatomic,copy,readonly)NSString *trimmedText;
 /// 是否包含字母
 @property(nonatomic,assign,readonly)BOOL hasLetters;
 /// 是否包含数字
@@ -65,27 +71,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong,readonly)NSDate *dateTime;
 /// 将字符串转为Url
 @property(nonatomic,strong,readonly)NSURL *url;
-/// 字符串开头和结尾没有空格或换行。
-@property(nonatomic,copy,readonly)NSString *trimmed;
+/// 获取GET请求中的参数 ?name=demo&age=10
+@property(nonatomic,strong,readonly)NSDictionary<NSString*,NSString*>*queryParameters;
 /// 将从url中获取的字符串解密
 @property(nonatomic,copy,readonly)NSString *urlDecoded;
 /// 将字符串编码成url可使用的字符串 url中不能有空格等特殊字符
 @property(nonatomic,copy,readonly)NSString *urlEncoded;
-/// 移除字符串中的空格和换行
-@property(nonatomic,copy,readonly)NSString *withoutSpaces;
 
 /// 将字符串转换成当地的float显示格式
--(void)floatToLocal:(NSLocale *)local;
-/// 将字符串转换成当地的double显示格式
--(void)doubleToLocal:(NSLocale *)local;
+-(CGFloat)floatToLocal:(NSLocale *)local;
 ///将字符串复制到全局粘贴板。
 -(void)copyToPasteboard;
 /// 将字符串转换成Date
 -(NSDate *)dateWithFormat:(NSString *)format;
- ///从字符串中删除给定的前缀。
--(NSString *)removingPrefix:(NSString *)prefix;
-///从字符串中删除给定的后缀。
--(NSString *)removingSuffix:(NSString *)suffix;
 
 /// 计算字符串的size
 /// @param size size
@@ -93,6 +91,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGSize)getSizeFromSize:(CGSize)size font:(UIFont *)font;
 - (CGFloat)getHeightFromWidth:(CGFloat)width font:(UIFont *)font;
 - (CGFloat)getWidthFromHeight:(CGFloat)height font:(UIFont *)font;
+
+-(BOOL)predicateWith:(NSString *)predicateStr;
++(BOOL)predicateWith:(NSString *)predicateStr withObject:(NSString*)obj;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2019/11/28.
-//  Copyright © 2019 williamoneilchina. All rights reserved.
+//  Copyright © 2019 Quan Li. All rights reserved.
 //
 
 #import "UITextField+Category.h"
@@ -37,11 +37,19 @@
     return [predicate evaluateWithObject:self.text];
 }
 
-- (BOOL)isAllChinese{
-    NSString *predicateStr = @"(^[\\u{4e00}-\\u{9fa5}]$)";
+- (BOOL)hasChinese{
+    NSString *predicateStr = @"([\\s\\S]*)[\\u4e00-\\u9fa5]+([\\s\\S]*)";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", predicateStr];
     return [predicate evaluateWithObject:self.text];
 }
+
+- (BOOL)isAllChinese{
+    NSString *predicateStr = @"(^[\\u4e00-\\u9fa5]+$)";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", predicateStr];
+    return [predicate evaluateWithObject:self.text];
+}
+
+
 
 - (BOOL)hasValidID{
     NSString *predicateStr = @"(^[0-9]{15}$)|([0-9]{17}([0-9]|[xX])$)";
@@ -85,6 +93,6 @@
 }
 
 - (NSString *)trimmedText{
-    return [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 @end
