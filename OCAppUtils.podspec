@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.default_subspec = 'Core'
   spec.subspec 'Core' do |sub|
     sub.source_files  = "OCAppUtils/Core/**/*.{h,m}"
-    sub.frameworks  = "Foundation","UIKit","WebKit","Security"
+    sub.frameworks  = "Foundation","UIKit","WebKit"
   end
 
   # spec.subspec 'MVVM' do |sub|

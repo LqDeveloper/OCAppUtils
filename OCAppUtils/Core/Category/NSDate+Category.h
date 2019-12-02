@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 分钟
 @property(nonatomic,assign,readonly)NSInteger minute;
 /// 秒
-@property(nonatomic,assign,readonly)NSInteger millisecond;
+@property(nonatomic,assign,readonly)NSInteger second;
 /// 纳秒
 @property(nonatomic,assign,readonly)NSInteger nanosecond;
 /// 获取当前 秒级 时间戳 - 10位

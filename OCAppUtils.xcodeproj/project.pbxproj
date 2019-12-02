@@ -26,11 +26,9 @@
 		513890A623911E930086960D /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890A523911E930086960D /* NSDate+Category.m */; };
 		513890A923911EC30086960D /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890A823911EC30086960D /* NSURL+Category.m */; };
 		513890AC23911EE70086960D /* NSURLRequest+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890AB23911EE60086960D /* NSURLRequest+Category.m */; };
-		513890AF23911F3C0086960D /* AESTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890AE23911F3C0086960D /* AESTool.m */; };
 		513890B223911F610086960D /* AppKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890B123911F610086960D /* AppKeyboardObserver.m */; };
 		513890B523911F9D0086960D /* AppCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890B423911F9D0086960D /* AppCountDownButton.m */; };
 		513890B823911FC60086960D /* NetworkManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890B723911FC60086960D /* NetworkManagerViewController.m */; };
-		513890C02391256F0086960D /* AppFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 513890BF2391256F0086960D /* AppFileManager.m */; };
 		5145685E238F9297008BFA59 /* AppDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145685D238F9297008BFA59 /* AppDeviceInfo.m */; };
 		5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145686A238FA694008BFA59 /* BaseTabBarViewController.m */; };
 		51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456872238FAD70008BFA59 /* BaseNavigationController.m */; };
@@ -40,6 +38,8 @@
 		5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145687E238FB4BD008BFA59 /* BaseCustomTableViewController.m */; };
 		51456886238FBEA0008BFA59 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456885238FBEA0008BFA59 /* UIView+Category.m */; };
 		51456889238FC74E008BFA59 /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456888238FC74E008BFA59 /* UIViewController+Category.m */; };
+		51A4C94A2394E301006355AE /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9492394E301006355AE /* NSObject+Category.m */; };
+		51A4C9522394E6F6006355AE /* AppFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9512394E6F6006355AE /* AppFileManager.m */; };
 		51E3D281238FD05B0074449B /* UIAlertController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D280238FD05B0074449B /* UIAlertController+Category.m */; };
 		51E3D284238FD2AE0074449B /* UIWindow+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D283238FD2AE0074449B /* UIWindow+Category.m */; };
 		51E3D287238FD51A0074449B /* UIApplication+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D286238FD51A0074449B /* UIApplication+Category.m */; };
@@ -111,16 +111,12 @@
 		513890A823911EC30086960D /* NSURL+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Category.m"; sourceTree = "<group>"; };
 		513890AA23911EE60086960D /* NSURLRequest+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Category.h"; sourceTree = "<group>"; };
 		513890AB23911EE60086960D /* NSURLRequest+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Category.m"; sourceTree = "<group>"; };
-		513890AD23911F3C0086960D /* AESTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESTool.h; sourceTree = "<group>"; };
-		513890AE23911F3C0086960D /* AESTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESTool.m; sourceTree = "<group>"; };
 		513890B023911F610086960D /* AppKeyboardObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKeyboardObserver.h; sourceTree = "<group>"; };
 		513890B123911F610086960D /* AppKeyboardObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKeyboardObserver.m; sourceTree = "<group>"; };
 		513890B323911F9D0086960D /* AppCountDownButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCountDownButton.h; sourceTree = "<group>"; };
 		513890B423911F9D0086960D /* AppCountDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCountDownButton.m; sourceTree = "<group>"; };
 		513890B623911FC60086960D /* NetworkManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManagerViewController.h; sourceTree = "<group>"; };
 		513890B723911FC60086960D /* NetworkManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManagerViewController.m; sourceTree = "<group>"; };
-		513890BE2391256F0086960D /* AppFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFileManager.h; sourceTree = "<group>"; };
-		513890BF2391256F0086960D /* AppFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFileManager.m; sourceTree = "<group>"; };
 		5145685C238F9297008BFA59 /* AppDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDeviceInfo.h; sourceTree = "<group>"; };
 		5145685D238F9297008BFA59 /* AppDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDeviceInfo.m; sourceTree = "<group>"; };
 		51456864238FA56D008BFA59 /* OCAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAppUtils.h; sourceTree = "<group>"; };
@@ -142,6 +138,10 @@
 		51456885238FBEA0008BFA59 /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		51456887238FC74E008BFA59 /* UIViewController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
 		51456888238FC74E008BFA59 /* UIViewController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
+		51A4C9482394E301006355AE /* NSObject+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
+		51A4C9492394E301006355AE /* NSObject+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
+		51A4C9502394E6F6006355AE /* AppFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFileManager.h; sourceTree = "<group>"; };
+		51A4C9512394E6F6006355AE /* AppFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFileManager.m; sourceTree = "<group>"; };
 		51E3D27F238FD05B0074449B /* UIAlertController+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Category.h"; sourceTree = "<group>"; };
 		51E3D280238FD05B0074449B /* UIAlertController+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Category.m"; sourceTree = "<group>"; };
 		51E3D282238FD2AE0074449B /* UIWindow+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Category.h"; sourceTree = "<group>"; };
@@ -275,19 +275,17 @@
 		51456865238FA61F008BFA59 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				51A4C9502394E6F6006355AE /* AppFileManager.h */,
+				51A4C9512394E6F6006355AE /* AppFileManager.m */,
 				51456866238FA626008BFA59 /* AppUtilsMacro.h */,
 				5145685C238F9297008BFA59 /* AppDeviceInfo.h */,
 				5145685D238F9297008BFA59 /* AppDeviceInfo.m */,
-				513890AD23911F3C0086960D /* AESTool.h */,
-				513890AE23911F3C0086960D /* AESTool.m */,
 				513890B023911F610086960D /* AppKeyboardObserver.h */,
 				513890B123911F610086960D /* AppKeyboardObserver.m */,
 				513890B323911F9D0086960D /* AppCountDownButton.h */,
 				513890B423911F9D0086960D /* AppCountDownButton.m */,
 				513890B623911FC60086960D /* NetworkManagerViewController.h */,
 				513890B723911FC60086960D /* NetworkManagerViewController.m */,
-				513890BE2391256F0086960D /* AppFileManager.h */,
-				513890BF2391256F0086960D /* AppFileManager.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -377,6 +375,8 @@
 				513890A823911EC30086960D /* NSURL+Category.m */,
 				513890AA23911EE60086960D /* NSURLRequest+Category.h */,
 				513890AB23911EE60086960D /* NSURLRequest+Category.m */,
+				51A4C9482394E301006355AE /* NSObject+Category.h */,
+				51A4C9492394E301006355AE /* NSObject+Category.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -520,7 +520,6 @@
 				51456879238FAF09008BFA59 /* BaseTableViewController.m in Sources */,
 				513890A923911EC30086960D /* NSURL+Category.m in Sources */,
 				513890A023911E340086960D /* NSDictionary+Category.m in Sources */,
-				513890AF23911F3C0086960D /* AESTool.m in Sources */,
 				5138909D23911DD60086960D /* NSArray+Category.m in Sources */,
 				51E3D28D238FD7510074449B /* UIButton+Category.m in Sources */,
 				51456886238FBEA0008BFA59 /* UIView+Category.m in Sources */,
@@ -537,12 +536,14 @@
 				51E3D299238FD8130074449B /* UINavigationItem+Category.m in Sources */,
 				5122AD36238F62AA00392321 /* ViewController.m in Sources */,
 				51389097239111290086960D /* UIColor+Category.m in Sources */,
+				51A4C9522394E6F6006355AE /* AppFileManager.m in Sources */,
 				513890B523911F9D0086960D /* AppCountDownButton.m in Sources */,
 				51E3D28A238FD7320074449B /* UILabel+Category.m in Sources */,
 				5122AD30238F62AA00392321 /* AppDelegate.m in Sources */,
 				51E3D290238FD77B0074449B /* UIImageView+Category.m in Sources */,
 				5122AD41238F62AA00392321 /* main.m in Sources */,
 				5145685E238F9297008BFA59 /* AppDeviceInfo.m in Sources */,
+				51A4C94A2394E301006355AE /* NSObject+Category.m in Sources */,
 				51456889238FC74E008BFA59 /* UIViewController+Category.m in Sources */,
 				51E3D29F238FD8BB0074449B /* UIScrollView+Category.m in Sources */,
 				5145687C238FB241008BFA59 /* BaseWebViewController.m in Sources */,
@@ -550,7 +551,6 @@
 				5138908C239104650086960D /* UITableView+Category.m in Sources */,
 				5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */,
 				51E3D293238FD78D0074449B /* UIImage+Category.m in Sources */,
-				513890C02391256F0086960D /* AppFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

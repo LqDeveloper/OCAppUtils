@@ -45,10 +45,10 @@
 #import "NSDate+Category.h"
 #import "NSURL+Category.h"
 #import "NSURLRequest+Category.h"
+#import "NSObject+Category.h"
 //Tool
 #import "AppDeviceInfo.h"
 #import "AppUtilsMacro.h"
-#import "AESTool.h"
 #import "AppKeyboardObserver.h"
 #import "AppCountDownButton.h"
 #import "NetworkManagerViewController.h"

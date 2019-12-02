@@ -154,7 +154,7 @@
     if (result1 == NSOrderedAscending && result2 == NSOrderedDescending) {
         return YES;
     }
-    return NO
+    return NO;
 }
 
 @end
