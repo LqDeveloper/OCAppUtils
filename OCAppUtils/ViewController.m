@@ -10,14 +10,31 @@
 #import "OCAppUtils.h"
 
 @interface ViewController ()
-
+@property(nonatomic,strong)UIButton *btn;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppLog(@"%ld",[NSDate date].quarter);
+    UIButton * left= [UIButton buttonWithTitle:@"左边" titleColor:[UIColor redColor] backgroundColor:[UIColor greenColor] normalImage:@"image.jpg"];
+    left.frame = CGRectMake(100, 100, 80, 80);
+    [self.view addSubview:left];
+    [left setImage:ImageLocationLeft space:10];
+    UIButton * right= [UIButton buttonWithTitle:@"右边" titleColor:[UIColor redColor] backgroundColor:[UIColor yellowColor] normalImage:@"image.jpg"];
+    right.frame = CGRectMake(100, 200, 80, 80);
+    [self.view addSubview:right];
+    [right setImage:ImageLocationRight space:10];
+    
+    UIButton * top = [UIButton buttonWithTitle:@"上边" titleColor:[UIColor redColor] backgroundColor:[UIColor cyanColor] normalImage:@"image.jpg"];
+    top.frame = CGRectMake(100, 310, 80, 80);
+    [self.view addSubview:top];
+    [top setImage:ImageLocationTop space:10];
+    
+    UIButton * bottom= [UIButton buttonWithTitle:@"下边" titleColor:[UIColor redColor] backgroundColor:[UIColor orangeColor] normalImage:@"image.jpg"];
+    bottom.frame = CGRectMake(100, 410, 80, 80);
+    [self.view addSubview:bottom];
+    [bottom setImage:ImageLocationBottom space:10];
 }
 
 -(void)printDeviceInfo{

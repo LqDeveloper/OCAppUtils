@@ -8,7 +8,7 @@
 
 #import "UIButton+Category.h"
 @implementation UIButton (Category)
-+(UIButton*)button:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor{
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.normalTitle = title;
     button.normalTitleColor = color;
@@ -16,19 +16,19 @@
     return button;
 }
 
-+(UIButton*)button:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName{
-    UIButton *button = [UIButton button:title titleColor:color backgroundColor:bgColor];
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName{
+    UIButton *button = [UIButton buttonWithTitle:title titleColor:color backgroundColor:bgColor];
     button.normalImage = [UIImage imageNamed:norImageName];
     return button;
 }
 
-+(UIButton*)button:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName selectImage:(NSString *)selImageName{
-    UIButton *button = [UIButton button:title titleColor:color backgroundColor:bgColor normalImage:norImageName];
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName selectImage:(NSString *)selImageName{
+    UIButton *button = [UIButton buttonWithTitle:title titleColor:color backgroundColor:bgColor normalImage:norImageName];
     button.selectImage = [UIImage imageNamed:selImageName];
     return button;
 }
 
-+(UIButton*)button:(NSString *)norImageName selectImage:(NSString *)selImageName{
++(UIButton*)buttonWithNormalImage:(NSString *)norImageName selectImage:(NSString *)selImageName{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.normalImage = [UIImage imageNamed:norImageName];
     button.selectImage = [UIImage imageNamed:selImageName];
@@ -139,8 +139,8 @@
     CGFloat insetAmount = space / 2;
     
     if (location == ImageLocationLeft) {
-        self.imageEdgeInsets = UIEdgeInsetsMake(0, insetAmount, 0, -insetAmount);
-        self.titleEdgeInsets = UIEdgeInsetsMake(0,-insetAmount, 0, insetAmount);
+        self.imageEdgeInsets = UIEdgeInsetsMake(0,-insetAmount, 0, insetAmount);
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, insetAmount, 0, -insetAmount);
     }else if (location == ImageLocationRight){
         self.imageEdgeInsets = UIEdgeInsetsMake(0,(titleWidth + insetAmount), 0, -(titleWidth + insetAmount));
         self.titleEdgeInsets = UIEdgeInsetsMake(0,-(imageWidth + insetAmount), 0, (imageWidth + insetAmount));

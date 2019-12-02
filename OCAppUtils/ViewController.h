@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseCustomTableViewController.h"
-@interface ViewController :BaseCustomTableViewController<UITableView *>
+@interface ViewController :BaseViewController
 
 
 @end

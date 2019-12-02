@@ -34,16 +34,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-+(UIButton*)button:(NSString *)title titleColor:(UIColor *)color
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
       backgroundColor:(UIColor *)bgColor;
 
-+(UIButton*)button:(NSString *)title titleColor:(UIColor *)color
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
       backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName;
 
-+(UIButton*)button:(NSString *)title titleColor:(UIColor *)color
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
       backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName selectImage:(NSString *)selImageName;
 
-+(UIButton*)button:(NSString *)norImageName selectImage:(NSString *)selImageName;
++(UIButton*)buttonWithNormalImage:(NSString *)norImageName selectImage:(NSString *)selImageName;
 
 -(void)centerTextAndImage:(CGFloat)space;
 
