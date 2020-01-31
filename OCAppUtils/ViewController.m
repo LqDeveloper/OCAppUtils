@@ -41,9 +41,7 @@
 //    }
 }
 
--(void)noti{
-    NSLog(@"hello");
-}
+
 
 -(void)printDeviceInfo{
     AppLog(@"是否是Debug环境:%d",AppDeviceInfo.isDebug);

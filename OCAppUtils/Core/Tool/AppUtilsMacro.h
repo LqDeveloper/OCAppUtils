@@ -34,6 +34,7 @@
 // 检测block是否可用并执行
 #define SafeBlock(block, ...) if (block) { block(__VA_ARGS__); }
 
+
 //定义弱引用
 #define WeakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self
 //定义强引用
@@ -80,5 +81,4 @@
 
 //GCD - 开启异步线程
 #define DISPATCH_GLOBAL_QUEUE_DEFAULT(globalQueueBlock) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), globalQueueBlocl);
-
 #endif /* AppUtilsMacro_h */
