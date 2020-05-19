@@ -164,6 +164,4 @@
     NSURL *rootURL = [NSURL fileURLWithPath:[self rootPath]];//(nonnull NSArray<NSURLResourceKey> *)
     return (NSUInteger)[rootURL resourceValuesForKeys:@[NSURLVolumeAvailableCapacityKey] error:nil][NSURLVolumeAvailableCapacityKey];
 }
-
-
 @end
