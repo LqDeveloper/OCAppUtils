@@ -41,6 +41,7 @@
 		51A4C94A2394E301006355AE /* NSObject+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9492394E301006355AE /* NSObject+LQCategory.m */; };
 		51A4C9522394E6F6006355AE /* AppFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9512394E6F6006355AE /* AppFileManager.m */; };
 		51A4C99A23950A7D006355AE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51A4C99923950A7C006355AE /* image.jpg */; };
+		51BED7EE2473E12A000FC37D /* CALayer+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */; };
 		51E3D281238FD05B0074449B /* UIAlertController+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D280238FD05B0074449B /* UIAlertController+LQCategory.m */; };
 		51E3D284238FD2AE0074449B /* UIWindow+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D283238FD2AE0074449B /* UIWindow+LQCategory.m */; };
 		51E3D287238FD51A0074449B /* UIApplication+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D286238FD51A0074449B /* UIApplication+LQCategory.m */; };
@@ -143,6 +144,8 @@
 		51A4C9502394E6F6006355AE /* AppFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFileManager.h; sourceTree = "<group>"; };
 		51A4C9512394E6F6006355AE /* AppFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFileManager.m; sourceTree = "<group>"; };
 		51A4C99923950A7C006355AE /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		51BED7EC2473E12A000FC37D /* CALayer+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+LQCategory.h"; sourceTree = "<group>"; };
+		51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LQCategory.m"; sourceTree = "<group>"; };
 		51E3D27F238FD05B0074449B /* UIAlertController+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LQCategory.h"; sourceTree = "<group>"; };
 		51E3D280238FD05B0074449B /* UIAlertController+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LQCategory.m"; sourceTree = "<group>"; };
 		51E3D282238FD2AE0074449B /* UIWindow+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LQCategory.h"; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				5138908B239104650086960D /* UITableView+LQCategory.m */,
 				5138908D239104D60086960D /* UICollectionView+LQCategory.h */,
 				5138908E239104D60086960D /* UICollectionView+LQCategory.m */,
+				51BED7EC2473E12A000FC37D /* CALayer+LQCategory.h */,
+				51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */,
 			);
 			path = UICategory;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				51456879238FAF09008BFA59 /* BaseTableViewController.m in Sources */,
 				513890A923911EC30086960D /* NSURL+LQCategory.m in Sources */,
 				513890A023911E340086960D /* NSDictionary+LQCategory.m in Sources */,
+				51BED7EE2473E12A000FC37D /* CALayer+LQCategory.m in Sources */,
 				5138909D23911DD60086960D /* NSArray+LQCategory.m in Sources */,
 				51E3D28D238FD7510074449B /* UIButton+LQCategory.m in Sources */,
 				51456886238FBEA0008BFA59 /* UIView+LQCategory.m in Sources */,

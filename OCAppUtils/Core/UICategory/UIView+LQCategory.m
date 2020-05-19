@@ -185,4 +185,14 @@ IB_DESIGNABLE
         [view removeFromSuperview];
     }
 }
+
+- (void)skt_setShadowWithColor:(UIColor *)color andAlpha:(CGFloat)alpha andX:(CGFloat)x andY:(CGFloat)y andBlur:(CGFloat)blur andSpread:(CGFloat)spread{
+    self.layer.shadowOffset = CGSizeMake(x, y);
+    self.layer.shadowRadius = blur * 0.5;
+    self.layer.shadowOpacity = alpha;
+    self.layer.shadowColor = color.CGColor;
+    CGRect rect =  CGRectInset(self.bounds, -spread, -spread);
+    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.layer.cornerRadius];
+    self.layer.shadowPath = path.CGPath;
+}
 @end

@@ -36,6 +36,7 @@
 #import "UIStackView+LQCategory.h"
 #import "UITableView+LQCategory.h"
 #import "UICollectionView+LQCategory.h"
+#import "CALayer+LQCategory.h"
 //Category
 #import "UIColor+LQCategory.h"
 #import "NSString+LQCategory.h"
