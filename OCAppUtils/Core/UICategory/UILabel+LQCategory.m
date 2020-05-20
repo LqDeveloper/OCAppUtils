@@ -9,10 +9,15 @@
 #import "UILabel+LQCategory.h"
 
 @implementation UILabel (LQCategory)
-+(UILabel *)label:(NSString *)text textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment{
++(UILabel *)label:(NSString *)text textColor:(UIColor *)color{
     UILabel *label = [[UILabel alloc]init];
     label.text = text;
     label.textColor = color;
+    return label;
+}
+
++(UILabel *)label:(NSString *)text textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment{
+    UILabel *label = [UILabel label:text textColor:color];
     label.textAlignment = alignment;
     return label;
 }

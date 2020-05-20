@@ -8,6 +8,15 @@
 
 #import "UIButton+LQCategory.h"
 @implementation UIButton (LQCategory)
+
++(UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color normalImage:(NSString *)norImageName{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.normalTitle = title;
+    button.normalTitleColor = color;
+    button.normalImage = [UIImage imageNamed:norImageName];
+    return  button;
+}
+
 +(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color backgroundColor:(UIColor *)bgColor{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.normalTitle = title;

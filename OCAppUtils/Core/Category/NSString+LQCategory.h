@@ -94,6 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(BOOL)predicateWith:(NSString *)predicateStr;
 +(BOOL)predicateWith:(NSString *)predicateStr withObject:(NSString*)obj;
+-(void)forEach:(void(^)(NSString *))block;
 @end
 
 NS_ASSUME_NONNULL_END

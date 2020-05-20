@@ -11,6 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIWindow (LQCategory)
+
+/// 切换rootViewController
+/// @param toVC 切换到的VC
+/// @param animated 是否动画
+/// @param duration 切换时间
+/// @param options 动画类型
+/// @param completion 完成回调
 - (void)switchRootVCTo:(UIViewController *)toVC animated:(BOOL)animated duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void(^)(void))completion;
 @end
 

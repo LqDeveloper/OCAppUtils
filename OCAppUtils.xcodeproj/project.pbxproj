@@ -38,6 +38,8 @@
 		5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145687E238FB4BD008BFA59 /* BaseCustomTableViewController.m */; };
 		51456886238FBEA0008BFA59 /* UIView+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456885238FBEA0008BFA59 /* UIView+LQCategory.m */; };
 		51456889238FC74E008BFA59 /* UIViewController+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456888238FC74E008BFA59 /* UIViewController+LQCategory.m */; };
+		51A0F96B2474C17600970C86 /* NSAttributedString+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F96A2474C17600970C86 /* NSAttributedString+LQCategory.m */; };
+		51A0F96E2474D11900970C86 /* AppDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F96D2474D11900970C86 /* AppDispatch.m */; };
 		51A4C94A2394E301006355AE /* NSObject+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9492394E301006355AE /* NSObject+LQCategory.m */; };
 		51A4C9522394E6F6006355AE /* AppFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9512394E6F6006355AE /* AppFileManager.m */; };
 		51A4C99A23950A7D006355AE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51A4C99923950A7C006355AE /* image.jpg */; };
@@ -139,6 +141,10 @@
 		51456885238FBEA0008BFA59 /* UIView+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LQCategory.m"; sourceTree = "<group>"; };
 		51456887238FC74E008BFA59 /* UIViewController+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LQCategory.h"; sourceTree = "<group>"; };
 		51456888238FC74E008BFA59 /* UIViewController+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LQCategory.m"; sourceTree = "<group>"; };
+		51A0F9692474C17600970C86 /* NSAttributedString+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+LQCategory.h"; sourceTree = "<group>"; };
+		51A0F96A2474C17600970C86 /* NSAttributedString+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+LQCategory.m"; sourceTree = "<group>"; };
+		51A0F96C2474D11900970C86 /* AppDispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDispatch.h; sourceTree = "<group>"; };
+		51A0F96D2474D11900970C86 /* AppDispatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDispatch.m; sourceTree = "<group>"; };
 		51A4C9482394E301006355AE /* NSObject+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LQCategory.h"; sourceTree = "<group>"; };
 		51A4C9492394E301006355AE /* NSObject+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LQCategory.m"; sourceTree = "<group>"; };
 		51A4C9502394E6F6006355AE /* AppFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFileManager.h; sourceTree = "<group>"; };
@@ -290,6 +296,8 @@
 				513890B423911F9D0086960D /* AppCountDownButton.m */,
 				513890B623911FC60086960D /* NetworkManagerViewController.h */,
 				513890B723911FC60086960D /* NetworkManagerViewController.m */,
+				51A0F96C2474D11900970C86 /* AppDispatch.h */,
+				51A0F96D2474D11900970C86 /* AppDispatch.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -383,6 +391,8 @@
 				513890AB23911EE60086960D /* NSURLRequest+LQCategory.m */,
 				51A4C9482394E301006355AE /* NSObject+LQCategory.h */,
 				51A4C9492394E301006355AE /* NSObject+LQCategory.m */,
+				51A0F9692474C17600970C86 /* NSAttributedString+LQCategory.h */,
+				51A0F96A2474C17600970C86 /* NSAttributedString+LQCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -518,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A0F96B2474C17600970C86 /* NSAttributedString+LQCategory.m in Sources */,
 				5138909A239113690086960D /* NSString+LQCategory.m in Sources */,
 				513890AC23911EE70086960D /* NSURLRequest+LQCategory.m in Sources */,
 				5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */,
@@ -533,6 +544,7 @@
 				51456886238FBEA0008BFA59 /* UIView+LQCategory.m in Sources */,
 				513890A623911E930086960D /* NSDate+LQCategory.m in Sources */,
 				51456876238FADEB008BFA59 /* BaseViewController.m in Sources */,
+				51A0F96E2474D11900970C86 /* AppDispatch.m in Sources */,
 				5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */,
 				5138908F239104D60086960D /* UICollectionView+LQCategory.m in Sources */,
 				51E3D2A2238FD8EC0074449B /* UIStackView+LQCategory.m in Sources */,

@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UILabel (LQCategory)
++(UILabel *)label:(NSString *)text textColor:(UIColor *)color;
 
 +(UILabel *)label:(NSString *)text textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 

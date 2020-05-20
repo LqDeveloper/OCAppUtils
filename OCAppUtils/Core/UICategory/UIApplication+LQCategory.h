@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIApplication (LQCategory)
+
+/// 打开链接
+/// @param urlStr 链接
+/// @param options options
+/// @param completion 完成回调
 + (void)openURL:(NSString*)urlStr options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options completionHandler:(void (^ __nullable)(BOOL success))completion;
 @end
 

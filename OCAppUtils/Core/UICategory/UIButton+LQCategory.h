@@ -32,16 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)IBInspectable UIImage *disabledImage;
 @property(nonatomic,strong)IBInspectable UIImage *highlightImage;
 
-
-
-+(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
-      backgroundColor:(UIColor *)bgColor;
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color normalImage:(NSString *)norImageName;
 
 +(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
-      backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName;
+            backgroundColor:(UIColor *)bgColor;
 
 +(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
-      backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName selectImage:(NSString *)selImageName;
+            backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName;
+
++(UIButton*)buttonWithTitle:(NSString *)title titleColor:(UIColor *)color
+            backgroundColor:(UIColor *)bgColor normalImage:(NSString *)norImageName selectImage:(NSString *)selImageName;
 
 +(UIButton*)buttonWithNormalImage:(NSString *)norImageName selectImage:(NSString *)selImageName;
 

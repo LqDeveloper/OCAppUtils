@@ -271,4 +271,13 @@
     return [predicate evaluateWithObject:obj];
 }
 
+- (void)forEach:(void (^)(NSString * _Nonnull))block{
+    if (!block) {return;}
+    NSRange range;
+    for(int i=0; i<self.length; i+=range.length){
+        range = [self rangeOfComposedCharacterSequenceAtIndex:i];
+        block([self substringWithRange:range]);
+    }
+}
+
 @end

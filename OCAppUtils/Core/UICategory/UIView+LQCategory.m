@@ -144,7 +144,7 @@ IB_DESIGNABLE
     return CGRectGetMaxY(self.frame);
 }
 
-- (UIViewController *)getCurrentVCWithWindow:(UIWindow *)window{
+- (UIViewController *)getParentVCWithWindow:(UIWindow *)window{
     return [self getCurrentVCFrom:window.rootViewController];
 }
 
