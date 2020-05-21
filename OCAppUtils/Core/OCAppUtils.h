@@ -47,6 +47,7 @@
 #import "NSURL+LQCategory.h"
 #import "NSURLRequest+LQCategory.h"
 #import "NSObject+LQCategory.h"
+#import "NSArray+LQSort.h"
 //Tool
 #import "AppDeviceInfo.h"
 #import "AppUtilsMacro.h"

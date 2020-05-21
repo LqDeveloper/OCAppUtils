@@ -42,7 +42,7 @@
 //    }
 //
     
-    NSArray<NSString *> *arr = @[@"1",@"2",@"3",@"4"];
+    NSArray<NSString *> *arr = @[@"4",@"2",@"5",@"1",@"3",@"6",@"8",@"7"];
     [arr forEachObject:^(NSString * _Nonnull item ) {
         NSLog(@"%@",item);
     }];
@@ -51,7 +51,13 @@
     [str forEach:^(NSString * _Nonnull item) {
         NSLog(@"%@",item);
     }];
-   
+    
+    NSArray *arr1 = [arr sortWithType:BubbleSort AndBlock:^BOOL(NSString * _Nonnull str1, NSString * _Nonnull str2) {
+        NSInteger num1 = str1.integerValue;
+        NSInteger num2 = str2.integerValue;
+        return num1 < num2;
+    }];
+    NSLog(@"%@",arr1);
 }
 
 

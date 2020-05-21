@@ -8,8 +8,12 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface NSArray <ObjectType> (LQCategory)
+/*
+ __covariant :子类型指针可以向父类型指针转换
+ __contravariant:父类型指针可以向子类型转换
+ __kindof修饰符:表示当前类或者子类
+ */
+@interface NSArray <__covariant ObjectType> (LQCategory)
 /// 数组是否为空
 @property(nonatomic,assign,readonly)BOOL isEmpty;
 

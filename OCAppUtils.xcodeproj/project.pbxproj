@@ -44,6 +44,7 @@
 		51A4C9522394E6F6006355AE /* AppFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9512394E6F6006355AE /* AppFileManager.m */; };
 		51A4C99A23950A7D006355AE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51A4C99923950A7C006355AE /* image.jpg */; };
 		51BED7EE2473E12A000FC37D /* CALayer+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */; };
+		51C5C35C247614690042FC55 /* NSArray+LQSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C5C35B247614690042FC55 /* NSArray+LQSort.m */; };
 		51E3D281238FD05B0074449B /* UIAlertController+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D280238FD05B0074449B /* UIAlertController+LQCategory.m */; };
 		51E3D284238FD2AE0074449B /* UIWindow+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D283238FD2AE0074449B /* UIWindow+LQCategory.m */; };
 		51E3D287238FD51A0074449B /* UIApplication+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D286238FD51A0074449B /* UIApplication+LQCategory.m */; };
@@ -152,6 +153,8 @@
 		51A4C99923950A7C006355AE /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		51BED7EC2473E12A000FC37D /* CALayer+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+LQCategory.h"; sourceTree = "<group>"; };
 		51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LQCategory.m"; sourceTree = "<group>"; };
+		51C5C35A247614690042FC55 /* NSArray+LQSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+LQSort.h"; sourceTree = "<group>"; };
+		51C5C35B247614690042FC55 /* NSArray+LQSort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LQSort.m"; sourceTree = "<group>"; };
 		51E3D27F238FD05B0074449B /* UIAlertController+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LQCategory.h"; sourceTree = "<group>"; };
 		51E3D280238FD05B0074449B /* UIAlertController+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LQCategory.m"; sourceTree = "<group>"; };
 		51E3D282238FD2AE0074449B /* UIWindow+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LQCategory.h"; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 				51A4C9492394E301006355AE /* NSObject+LQCategory.m */,
 				51A0F9692474C17600970C86 /* NSAttributedString+LQCategory.h */,
 				51A0F96A2474C17600970C86 /* NSAttributedString+LQCategory.m */,
+				51C5C35A247614690042FC55 /* NSArray+LQSort.h */,
+				51C5C35B247614690042FC55 /* NSArray+LQSort.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 				513890B823911FC60086960D /* NetworkManagerViewController.m in Sources */,
 				51E3D284238FD2AE0074449B /* UIWindow+LQCategory.m in Sources */,
 				513890B223911F610086960D /* AppKeyboardObserver.m in Sources */,
+				51C5C35C247614690042FC55 /* NSArray+LQSort.m in Sources */,
 				51456879238FAF09008BFA59 /* BaseTableViewController.m in Sources */,
 				513890A923911EC30086960D /* NSURL+LQCategory.m in Sources */,
 				513890A023911E340086960D /* NSDictionary+LQCategory.m in Sources */,
