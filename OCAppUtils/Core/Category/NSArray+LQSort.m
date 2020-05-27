@@ -170,4 +170,9 @@
     }
 }
 
+- (NSArray *)sortDescriptorWithKey:(NSString *)key ascending:(BOOL)ascending{
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:key ascending:ascending];
+    return [self sortedArrayUsingDescriptors:@[sort]];
+}
+
 @end

@@ -36,6 +36,7 @@
     [self.view addSubview:bottom];
     [bottom setImage:ImageLocationBottom space:10];
     [bottom skt_setShadowWithColor:[UIColor blueColor] andAlpha:0.5 andX:0 andY:10 andBlur:40 andSpread:10];
+    [bottom addTarget:self action:@selector(clicBtn) forControlEvents:UIControlEventTouchUpInside];
 //    BOOL isTrue = NO;
 //    lq_guard(isTrue)else{
 //        NSLog(@"这是guard");
@@ -60,6 +61,24 @@
     NSLog(@"%@",arr1);
 }
 
+-(void)clicBtn{
+    if (@available(iOS 10.3, *)) {
+           [self showAppReview];
+       } else {
+           // Fallback on earlier versions
+       }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [UIApplication pushToitunesWithAppId:@"498354805"];
+//    [self showAppStoreInApp:@"498354805"];
+    [UIApplication showAppReview];
+}
 
 
 -(void)printDeviceInfo{
@@ -91,8 +110,8 @@
     AppLog(@"沙盒下Document文件夹下的路径:%@",AppDeviceInfo.documentPath);
     AppLog(@"沙盒下Cache文件夹下的路径:%@",AppDeviceInfo.cachePath);
     AppLog(@"沙盒路径:%@",AppDeviceInfo.rootPath);
-    AppLog(@"内存总容量:%ld",AppDeviceInfo.volumeTotalCapacity);
-    AppLog(@"可用内存容量:%ld",AppDeviceInfo.volumeAvailableCapacity);
+    AppLog(@"内存总容量:%lu",(unsigned long)AppDeviceInfo.volumeTotalCapacity);
+    AppLog(@"可用内存容量:%lu",(unsigned long)AppDeviceInfo.volumeAvailableCapacity);
     
     AppLog(@"%f",ScreenWidth);
     AppLog(@"%f",ScreenHeight);

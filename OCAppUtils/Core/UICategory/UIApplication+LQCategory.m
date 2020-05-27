@@ -7,7 +7,7 @@
 //
 
 #import "UIApplication+LQCategory.h"
-
+#import <StoreKit/StoreKit.h>
 @implementation UIApplication (LQCategory)
 + (void)openURL:(NSString*)urlStr options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options completionHandler:(void (^ __nullable)(BOOL success))completion{
     NSURL *url = [NSURL URLWithString:urlStr];
@@ -18,5 +18,39 @@
             [[UIApplication sharedApplication]openURL:url];
         }
     }
+}
+
++(void)showAppReview {
+    [SKStoreReviewController requestReview];
+}
+
+
++(void)openSetting{
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if ([[UIApplication sharedApplication]canOpenURL:url]) {
+        if (@available(iOS 10.0,*)) {
+            [[UIApplication sharedApplication]openURL:url options:@{} completionHandler:nil];
+        }else{
+            [[UIApplication sharedApplication]openURL:url];
+        }
+    }
+}
+
++(void)showAppStoreInApp:(NSString *)appId fromVC:(nonnull UIViewController *)fromVC{
+    SKStoreProductViewController *vc = [[SKStoreProductViewController alloc] init];
+    __weak typeof(vc) weakVC = vc;
+    __weak typeof(fromVC) weakSelf = fromVC;
+    [vc loadProductWithParameters:
+     @{SKStoreProductParameterITunesItemIdentifier : appId} completionBlock:^(BOOL result, NSError *error) {
+        if(!error){
+            [weakSelf presentViewController:weakVC animated:YES completion:nil];
+        }
+    }];
+}
+
+
++(void)pushToAppStoreWithAppId:(NSString *)appId{
+    NSString *urlStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appId];
+    [UIApplication openURL:urlStr options:@{} completionHandler:nil];
 }
 @end

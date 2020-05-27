@@ -280,4 +280,17 @@
     }
 }
 
+- (NSString *)replaceRegularExpression:(NSString *)pattern withStr:(NSString *)str{
+    return [self replaceRegularExpression:pattern withStr:str range:self.range];
+}
+
+- (NSString *)replaceRegularExpression:(NSString *)pattern withStr:(NSString *)str range:(NSRange)range{
+    NSError *error;
+    NSRegularExpression *regular = [[NSRegularExpression alloc]initWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    if (error) {
+        return [NSString stringWithFormat:@"%@",self];
+    }
+    return [regular stringByReplacingMatchesInString:self options:NSMatchingReportCompletion range:range withTemplate:str];
+}
+
 @end

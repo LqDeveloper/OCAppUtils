@@ -21,4 +21,10 @@
         [textField addTarget:target action:selector forControlEvents:UIControlEventValueChanged];
     }];
 }
+
+-(void)addActions:(NSArray<UIAlertAction *> *)actions{
+    for (UIAlertAction *action  in actions) {
+        [self addAction:action];
+    }
+}
 @end

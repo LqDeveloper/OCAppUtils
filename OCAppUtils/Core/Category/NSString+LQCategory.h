@@ -95,6 +95,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)predicateWith:(NSString *)predicateStr;
 +(BOOL)predicateWith:(NSString *)predicateStr withObject:(NSString*)obj;
 -(void)forEach:(void(^)(NSString *))block;
+
+-(NSString *)replaceRegularExpression:(NSString *)pattern withStr:(NSString *)str;
+-(NSString *)replaceRegularExpression:(NSString *)pattern withStr:(NSString *)str range:(NSRange)range;
 @end
 
 NS_ASSUME_NONNULL_END

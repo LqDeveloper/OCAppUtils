@@ -35,10 +35,30 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 显示alert
 /// @param title 标题
-/// @param message 标题
+/// @param message 描述
 /// @param okTitle 确认按钮标题
 /// @param okCallBack 确认回调
 - (void)showAlert:(NSString *)title message:(NSString *)message okTitle:(NSString *)okTitle okBlock:(void(^)(void))okCallBack;
+
+/// 显示alert
+/// @param title 标题
+/// @param message 描述
+/// @param actions UIAlertAction数组
+- (void)showAlert:(NSString *)title message:(NSString *)message andActions:(NSArray<UIAlertAction*>*)actions;
+
+/// 弹出APP评价页面
+-(void)showAppReview API_AVAILABLE(ios(10.3));
+
+/// 跳转到APP设置页面
+-(void)openSetting;
+
+/// 在APP中弹出App Store页面
+/// @param appId AppId
+-(void)showAppStoreInApp:(NSString *)appId;
+
+/// 在APP中弹出App Store页面
+/// @param appId AppId
+-(void)pushToAppStoreWithAppId:(NSString *)appId;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -342,6 +342,8 @@
 				5138908E239104D60086960D /* UICollectionView+LQCategory.m */,
 				51BED7EC2473E12A000FC37D /* CALayer+LQCategory.h */,
 				51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */,
+				51389095239111290086960D /* UIColor+LQCategory.h */,
+				51389096239111290086960D /* UIColor+LQCategory.m */,
 			);
 			path = UICategory;
 			sourceTree = "<group>";
@@ -376,8 +378,6 @@
 		51456882238FBDFD008BFA59 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				51389095239111290086960D /* UIColor+LQCategory.h */,
-				51389096239111290086960D /* UIColor+LQCategory.m */,
 				51389098239113690086960D /* NSString+LQCategory.h */,
 				51389099239113690086960D /* NSString+LQCategory.m */,
 				5138909B23911DD60086960D /* NSArray+LQCategory.h */,
@@ -746,12 +746,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8US8C88B4V;
 				INFOPLIST_FILE = OCAppUtils/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = williamoneichina.OCAppUtils;
+				PRODUCT_BUNDLE_IDENTIFIER = LQ.LQAppUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -762,12 +763,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8US8C88B4V;
 				INFOPLIST_FILE = OCAppUtils/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = williamoneichina.OCAppUtils;
+				PRODUCT_BUNDLE_IDENTIFIER = LQ.LQAppUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

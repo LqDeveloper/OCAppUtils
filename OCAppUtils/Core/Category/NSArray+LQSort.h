@@ -31,6 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 使用冒泡算法对数组内容进行排序 第一个 < 第二个 为降序 第一个 > 第二个 为升序 
 /// @param block 比较方式
 -(NSArray<ObjectType>*)sort:(BOOL(^)(ObjectType,ObjectType))block;
+
+/// 使用NSSortDescriptor根据keypath 排序 返回排序后的数组
+/// @param key key
+/// @param ascending 是否是升序
+-(NSArray<ObjectType>*)sortDescriptorWithKey:(NSString *)key ascending:(BOOL)ascending;
 @end
 
 NS_ASSUME_NONNULL_END

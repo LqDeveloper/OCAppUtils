@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param target UIControlEventValueChanged的target
 /// @param selector UIControlEventValueChanged响应方法
 - (void)addTextField:(NSString *)text placeholder:(NSString *)placeholder valueChangedTarget:(nullable id)target valueChangedSelector:(SEL)selector;
+
+/// 添加UIAlertAction数组
+/// @param actions UIAlertAction数组
+-(void)addActions:(NSArray<UIAlertAction *>*)actions;
 @end
 
 NS_ASSUME_NONNULL_END

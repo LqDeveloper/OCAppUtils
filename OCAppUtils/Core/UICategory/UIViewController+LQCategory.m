@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+LQCategory.h"
-
+#import "UIApplication+LQCategory.h"
 IB_DESIGNABLE
 @implementation UIViewController (LQCategory)
 - (void)setPopGestureEnable:(BOOL)popGestureEnable{
@@ -79,5 +79,29 @@ IB_DESIGNABLE
     
     [alertVC addAction:okAction];
     [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+- (void)showAlert:(NSString *)title message:(NSString *)message andActions:(NSArray<UIAlertAction *> *)actions{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    for (UIAlertAction *action in actions) {
+        [alertVC addAction:action];
+    }
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+-(void)showAppReview {
+    [UIApplication showAppReview];
+}
+
+-(void)openSetting{
+    [UIApplication openSetting];
+}
+
+-(void)showAppStoreInApp:(NSString *)appId{
+    [UIApplication showAppStoreInApp:appId fromVC:self];
+}
+
+-(void)pushToAppStoreWithAppId:(NSString *)appId{
+    [UIApplication pushToAppStoreWithAppId:appId];
 }
 @end
