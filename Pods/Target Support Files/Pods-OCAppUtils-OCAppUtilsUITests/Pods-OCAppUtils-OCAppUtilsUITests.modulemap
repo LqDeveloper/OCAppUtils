@@ -1,0 +1,6 @@
+framework module Pods_OCAppUtils_OCAppUtilsUITests {
+  umbrella header "Pods-OCAppUtils-OCAppUtilsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

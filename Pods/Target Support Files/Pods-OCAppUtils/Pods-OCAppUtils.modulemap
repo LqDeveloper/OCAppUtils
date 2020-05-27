@@ -1,0 +1,6 @@
+framework module Pods_OCAppUtils {
+  umbrella header "Pods-OCAppUtils-umbrella.h"
+
+  export *
+  module * { export * }
+}
