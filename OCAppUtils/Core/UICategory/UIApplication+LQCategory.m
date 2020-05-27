@@ -8,6 +8,7 @@
 
 #import "UIApplication+LQCategory.h"
 #import <StoreKit/StoreKit.h>
+#import <UserNotifications/UserNotifications.h>
 @implementation UIApplication (LQCategory)
 + (void)openURL:(NSString*)urlStr options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options completionHandler:(void (^ __nullable)(BOOL success))completion{
     NSURL *url = [NSURL URLWithString:urlStr];
@@ -52,5 +53,20 @@
 +(void)pushToAppStoreWithAppId:(NSString *)appId{
     NSString *urlStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appId];
     [UIApplication openURL:urlStr options:@{} completionHandler:nil];
+}
+
++(void)checkNotificationEnable:(void (^)(BOOL))completion{
+    if (@available(iOS 10.0,*)) {
+        [[UNUserNotificationCenter currentNotificationCenter]getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+            if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
+                completion(YES);
+            }else{
+                completion(NO);
+            }
+        }];
+    }else{
+        UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
+        completion((UIUserNotificationTypeNone == setting.types) ? NO : YES);
+    }
 }
 @end

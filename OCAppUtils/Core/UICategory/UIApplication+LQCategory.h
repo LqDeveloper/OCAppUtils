@@ -31,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 在APP中弹出App Store页面
 /// @param appId AppId
 +(void)pushToAppStoreWithAppId:(NSString *)appId;
+
+/// 判断推送是否打开
+/// @param completion 回调
++(void)checkNotificationEnable:(void(^)(BOOL))completion;
 @end
 
 NS_ASSUME_NONNULL_END

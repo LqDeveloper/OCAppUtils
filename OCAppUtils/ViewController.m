@@ -59,6 +59,10 @@
         return num1 < num2;
     }];
     NSLog(@"%@",arr1);
+    
+    [self checkNotificationEnable:^(BOOL isSuccess) {
+        
+    }];
 }
 
 -(void)clicBtn{
@@ -77,7 +81,11 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 //    [UIApplication pushToitunesWithAppId:@"498354805"];
 //    [self showAppStoreInApp:@"498354805"];
-    [UIApplication showAppReview];
+    if (@available(iOS 10.3, *)) {
+        [UIApplication showAppReview];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 

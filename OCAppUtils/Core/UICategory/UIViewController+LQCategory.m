@@ -104,4 +104,8 @@ IB_DESIGNABLE
 -(void)pushToAppStoreWithAppId:(NSString *)appId{
     [UIApplication pushToAppStoreWithAppId:appId];
 }
+
+-(void)checkNotificationEnable:(void (^)(BOOL))completion{
+    [UIApplication checkNotificationEnable:completion];
+}
 @end
