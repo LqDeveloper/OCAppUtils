@@ -40,6 +40,7 @@
 //Category
 #import "UIColor+LQCategory.h"
 #import "NSString+LQCategory.h"
+#import "NSString+Encryption.h"
 #import "NSArray+LQCategory.h"
 #import "NSDictionary+LQCategory.h"
 #import "NSData+LQCategory.h"

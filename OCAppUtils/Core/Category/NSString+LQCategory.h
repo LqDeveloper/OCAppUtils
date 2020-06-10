@@ -17,12 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong,readonly)NSDictionary *json;
 /// 字符串范围
 @property(nonatomic,assign,readonly)NSRange range;
-/// base64 解密
-@property(nonatomic,copy,readonly)NSString *base64Decoded;
-/// base64 加密
-@property(nonatomic,copy,readonly)NSString *base64Encoded;
-/// MD5 加密
-@property(nonatomic,copy,readonly)NSString *md5;
 /// 移除字符串中所有的换行和空格
 @property(nonatomic,copy,readonly)NSString *removeSpace;
 ///移除开头和结尾的空格

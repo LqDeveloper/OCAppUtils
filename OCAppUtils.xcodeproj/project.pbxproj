@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,6 +58,7 @@
 		51E3D29C238FD86F0074449B /* UITextField+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D29B238FD86F0074449B /* UITextField+LQCategory.m */; };
 		51E3D29F238FD8BB0074449B /* UIScrollView+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D29E238FD8BB0074449B /* UIScrollView+LQCategory.m */; };
 		51E3D2A2238FD8EC0074449B /* UIStackView+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E3D2A1238FD8EC0074449B /* UIStackView+LQCategory.m */; };
+		5ABD34602491003400729170 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD345F2491003400729170 /* NSString+Encryption.m */; };
 		75962206073437ECD13AEC16 /* Pods_OCAppUtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C020197F2FF45941B9B90B74 /* Pods_OCAppUtilsTests.framework */; };
 		9CF3ABAA60BC691A77C35CE1 /* Pods_OCAppUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDFE91F6A2FEC81595CCC75 /* Pods_OCAppUtils.framework */; };
 /* End PBXBuildFile section */
@@ -186,6 +187,8 @@
 		51E3D29E238FD8BB0074449B /* UIScrollView+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LQCategory.m"; sourceTree = "<group>"; };
 		51E3D2A0238FD8EC0074449B /* UIStackView+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIStackView+LQCategory.h"; sourceTree = "<group>"; };
 		51E3D2A1238FD8EC0074449B /* UIStackView+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIStackView+LQCategory.m"; sourceTree = "<group>"; };
+		5ABD345E2491003400729170 /* NSString+Encryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
+		5ABD345F2491003400729170 /* NSString+Encryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
 		63A62B11A911626ABE387A0A /* Pods_OCAppUtils_OCAppUtilsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCAppUtils_OCAppUtilsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E229B416530D7C34B510B6 /* Pods-OCAppUtils-OCAppUtilsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtils-OCAppUtilsUITests.debug.xcconfig"; path = "Target Support Files/Pods-OCAppUtils-OCAppUtilsUITests/Pods-OCAppUtils-OCAppUtilsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EB6464E955A99C0E2C3CC84 /* Pods-OCAppUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtils.debug.xcconfig"; path = "Target Support Files/Pods-OCAppUtils/Pods-OCAppUtils.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,7 +234,6 @@
 				FFEAE3FEA929307AA09675EA /* Pods-OCAppUtilsTests.debug.xcconfig */,
 				510184789D4003A9CD240B6B /* Pods-OCAppUtilsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -411,6 +413,8 @@
 			children = (
 				51389098239113690086960D /* NSString+LQCategory.h */,
 				51389099239113690086960D /* NSString+LQCategory.m */,
+				5ABD345E2491003400729170 /* NSString+Encryption.h */,
+				5ABD345F2491003400729170 /* NSString+Encryption.m */,
 				5138909B23911DD60086960D /* NSArray+LQCategory.h */,
 				5138909C23911DD60086960D /* NSArray+LQCategory.m */,
 				5138909E23911E340086960D /* NSDictionary+LQCategory.h */,
@@ -683,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A0F96B2474C17600970C86 /* NSAttributedString+LQCategory.m in Sources */,
+				5ABD34602491003400729170 /* NSString+Encryption.m in Sources */,
 				5138909A239113690086960D /* NSString+LQCategory.m in Sources */,
 				513890AC23911EE70086960D /* NSURLRequest+LQCategory.m in Sources */,
 				5145686B238FA694008BFA59 /* BaseTabBarViewController.m in Sources */,

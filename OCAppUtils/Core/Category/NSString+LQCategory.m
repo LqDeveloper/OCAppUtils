@@ -7,7 +7,7 @@
 //
 
 #import "NSString+LQCategory.h"
-#import <CommonCrypto/CommonDigest.h>
+
 @implementation NSString (LQCategory)
 - (CGSize)getSizeFromSize:(CGSize)size font:(UIFont *)font{
     return[self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
@@ -32,32 +32,6 @@
 -(NSDictionary *)json{
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-}
-
--(NSString *)base64Decoded{
-    NSData *data =  [[NSData alloc]initWithBase64EncodedString:self options:0];
-    return  [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (NSString *)base64Encoded{
-    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-    return [data base64EncodedStringWithOptions:0];
-}
-
-- (NSString *)md5{
-    // OC 字符串转换位C字符串
-    const char *cStr = [self UTF8String];
-    // 16位加密
-    unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    // 1: 需要加密的C字符串
-    // 2: 加密的字符串的长度
-    // 3: 加密长度
-    CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
-    NSMutableString *result = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH];
-    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-        [result appendFormat:@"%02X", digest[i]];
-    }
-    return result;
 }
 
 -(NSString *)removeSpace{
