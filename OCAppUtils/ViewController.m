@@ -63,6 +63,46 @@
     [self checkNotificationEnable:^(BOOL isSuccess) {
         
     }];
+    //81dc9bdb52d04dc20036dbd8313ed055
+    NSLog(@"%@",@"1234".md5);
+    //7110eda4d09e062aa5e4a390b0a572ac0d2c0220
+    NSLog(@"%@",@"1234".sha1);
+    //99fb2f48c6af4761f904fc85f95eb56190e5d40b1f44ec3a9c1fa319
+    NSLog(@"%@",@"1234".sha224);
+    //03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+    NSLog(@"%@",@"1234".sha256);
+    //504f008c8fcf8b2ed5dfcde752fc5464ab8ba064215d9c5b5fc486af3d9ab8c81b14785180d2ad7cee1ab792ad44798c
+    NSLog(@"%@",@"1234".sha384);
+    //d404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db
+    NSLog(@"%@",@"1234".sha512);
+    NSLog(@"------------------------------");
+    //966ae92d2e266068411f135706ab4d9e
+    NSLog(@"%@",[@"1234" hmacMD5StringWithKey:@"key"]);
+    //02dc09676d62a47018fbfb645cd9a27e27c5e283
+    NSLog(@"%@",[@"1234" hmacSHA1StringWithKey:@"key"]);
+    //ca2b2f3411f154dbd1a0179860b1aeef9ee9072f064a5a319d86685b
+    NSLog(@"%@",[@"1234" hmacSHA224StringWithKey:@"key"]);
+    //280ed91eee6eb96a2b1cf598843c1308e84623d14e4208d96c20f7e2de81315e
+    NSLog(@"%@",[@"1234" hmacSHA256StringWithKey:@"key"]);
+    //682ef474a442069c734a885a7e4ffca6994a99a914ceea86cac63572edcdbc22fc477e9b8d7e4505fa52d840639d5c43
+    NSLog(@"%@",[@"1234" hmacSHA384StringWithKey:@"key"]);
+    //5d7ea93e116204a673674f9458d42bade8c85896fce87ff267ca52b8b2088d5c49799192856150c9a2e76db44917571c0e2848003d7702c78b232a0ba2dd654c
+    NSLog(@"%@",[@"1234" hmacSHA512StringWithKey:@"key"]);
+    NSLog(@"------------------------------");
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"jpg"];
+    //4a55abbdf6a269329f9a8d262d2fa49
+    NSLog(@"%@",path.fileMD5Hash);
+    //6e6772a6d7700be44a128f884c8344e1ea628757
+    NSLog(@"%@",path.fileSHA1Hash);
+    //febe0f87a752e78390bc98e1fb96bfa3bb59a62c58ffaeffedcc460a
+    NSLog(@"%@",path.fileSHA224Hash);
+    //a5f8bf4dfbd93077821a7776343fb0eec248b5edd7788989e36d75ebbc53db54
+    NSLog(@"%@",path.fileSHA256Hash);
+    //abcb6d29ee717d3c5c29263b69d71c59b772815a8003ff2253eaf07535ea57933e29080694d5bbb6accc5285445ec773
+    NSLog(@"%@",path.fileSHA384Hash);
+    //21a171aed9c537b227e1c542ba10d347192ac468d8eedfadd9d3dc35661167406ef852dfc06cd961567cc5d3ce659ed91dc4e4a9ede262e003be13abe3022265
+    NSLog(@"%@",path.fileSHA512Hash);
+    
 }
 
 -(void)clicBtn{

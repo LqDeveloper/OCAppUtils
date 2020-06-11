@@ -2,22 +2,14 @@
 //  NSString+Encryption.m
 //  OCAppUtils
 //
-//  Created by liquan on 2020/6/10.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Created by Quan Li on 2020/6/10.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 #import "NSString+Encryption.h"
 #import <CommonCrypto/CommonCrypto.h>
 @implementation NSString (Encryption)
--(NSString *)base64Decoded{
-    NSData *data =  [[NSData alloc]initWithBase64EncodedString:self options:0];
-    return  [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-}
 
-- (NSString *)base64Encoded{
-    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-    return [data base64EncodedStringWithOptions:0];
-}
 
 - (NSString *)md5{
     const char *str = self.UTF8String;
@@ -33,11 +25,25 @@
     return [self stringFromBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
 }
 
+- (NSString *)sha224 {
+    const char *str = self.UTF8String;
+    uint8_t buffer[CC_SHA224_DIGEST_LENGTH];
+    CC_SHA224(str, (CC_LONG)strlen(str), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA224_DIGEST_LENGTH];
+}
+
 - (NSString *)sha256 {
     const char *str = self.UTF8String;
     uint8_t buffer[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256(str, (CC_LONG)strlen(str), buffer);
     return [self stringFromBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
+}
+
+- (NSString *)sha384{
+    const char *str = self.UTF8String;
+    uint8_t buffer[CC_SHA384_DIGEST_LENGTH];
+    CC_SHA384(str, (CC_LONG)strlen(str), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA384_DIGEST_LENGTH];
 }
 
 - (NSString *)sha512 {
@@ -47,38 +53,6 @@
     return [self stringFromBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
-#pragma mark - HMAC 散列函数
-- (NSString *)hmacMD5StringWithKey:(NSString *)key {
-    const char *keyData = key.UTF8String;
-    const char *strData = self.UTF8String;
-    uint8_t buffer[CC_MD5_DIGEST_LENGTH];
-    CCHmac(kCCHmacAlgMD5, keyData, strlen(keyData), strData, strlen(strData), buffer);
-    return [self stringFromBytes:buffer length:CC_MD5_DIGEST_LENGTH];
-}
-
-- (NSString *)hmacSHA1StringWithKey:(NSString *)key {
-    const char *keyData = key.UTF8String;
-    const char *strData = self.UTF8String;
-    uint8_t buffer[CC_SHA1_DIGEST_LENGTH];
-    CCHmac(kCCHmacAlgSHA1, keyData, strlen(keyData), strData, strlen(strData), buffer);
-    return [self stringFromBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
-}
-
-- (NSString *)hmacSHA256StringWithKey:(NSString *)key {
-    const char *keyData = key.UTF8String;
-    const char *strData = self.UTF8String;
-    uint8_t buffer[CC_SHA256_DIGEST_LENGTH];
-    CCHmac(kCCHmacAlgSHA256, keyData, strlen(keyData), strData, strlen(strData), buffer);
-    return [self stringFromBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
-}
-
-- (NSString *)hmacSHA512StringWithKey:(NSString *)key {
-    const char *keyData = key.UTF8String;
-    const char *strData = self.UTF8String;
-    uint8_t buffer[CC_SHA512_DIGEST_LENGTH];
-    CCHmac(kCCHmacAlgSHA512, keyData, strlen(keyData), strData, strlen(strData), buffer);
-    return [self stringFromBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
-}
 
 #pragma mark - 文件散列函数
 
@@ -140,6 +114,34 @@
     return [self stringFromBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
 }
 
+- (NSString *)fileSHA224Hash {
+    NSFileHandle *fp = [NSFileHandle fileHandleForReadingAtPath:self];
+    if (fp == nil) {
+        return nil;
+    }
+    
+    CC_SHA256_CTX hashCtx;
+    CC_SHA224_Init(&hashCtx);
+    
+    while (YES) {
+        @autoreleasepool {
+            NSData *data = [fp readDataOfLength:FileHashDefaultChunkSizeForReadingData];
+            
+            CC_SHA224_Update(&hashCtx, data.bytes, (CC_LONG)data.length);
+            
+            if (data.length == 0) {
+                break;
+            }
+        }
+    }
+    [fp closeFile];
+    
+    uint8_t buffer[CC_SHA224_DIGEST_LENGTH];
+    CC_SHA224_Final(buffer, &hashCtx);
+    
+    return [self stringFromBytes:buffer length:CC_SHA224_DIGEST_LENGTH];
+}
+
 - (NSString *)fileSHA256Hash {
     NSFileHandle *fp = [NSFileHandle fileHandleForReadingAtPath:self];
     if (fp == nil) {
@@ -167,6 +169,36 @@
     
     return [self stringFromBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
 }
+
+
+- (NSString *)fileSHA384Hash {
+    NSFileHandle *fp = [NSFileHandle fileHandleForReadingAtPath:self];
+    if (fp == nil) {
+        return nil;
+    }
+    
+    CC_SHA512_CTX hashCtx;
+    CC_SHA384_Init(&hashCtx);
+    
+    while (YES) {
+        @autoreleasepool {
+            NSData *data = [fp readDataOfLength:FileHashDefaultChunkSizeForReadingData];
+            
+            CC_SHA384_Update(&hashCtx, data.bytes, (CC_LONG)data.length);
+            
+            if (data.length == 0) {
+                break;
+            }
+        }
+    }
+    [fp closeFile];
+    
+    uint8_t buffer[CC_SHA384_DIGEST_LENGTH];
+    CC_SHA384_Final(buffer, &hashCtx);
+    
+    return [self stringFromBytes:buffer length:CC_SHA384_DIGEST_LENGTH];
+}
+
 
 - (NSString *)fileSHA512Hash {
     NSFileHandle *fp = [NSFileHandle fileHandleForReadingAtPath:self];
@@ -196,7 +228,54 @@
     return [self stringFromBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
+#pragma mark - HMAC 散列函数
+- (NSString *)hmacMD5StringWithKey:(NSString *)key {
+    const char *keyData = key.UTF8String;
+    const char *strData = self.UTF8String;
+    uint8_t buffer[CC_MD5_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgMD5, keyData, strlen(keyData), strData, strlen(strData), buffer);
+    return [self stringFromBytes:buffer length:CC_MD5_DIGEST_LENGTH];
+}
 
+- (NSString *)hmacSHA1StringWithKey:(NSString *)key {
+    const char *keyData = key.UTF8String;
+    const char *strData = self.UTF8String;
+    uint8_t buffer[CC_SHA1_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA1, keyData, strlen(keyData), strData, strlen(strData), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
+}
+
+- (NSString *)hmacSHA224StringWithKey:(NSString *)key {
+    const char *keyData = key.UTF8String;
+    const char *strData = self.UTF8String;
+    uint8_t buffer[CC_SHA224_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA224, keyData, strlen(keyData), strData, strlen(strData), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA224_DIGEST_LENGTH];
+}
+
+- (NSString *)hmacSHA256StringWithKey:(NSString *)key {
+    const char *keyData = key.UTF8String;
+    const char *strData = self.UTF8String;
+    uint8_t buffer[CC_SHA256_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA256, keyData, strlen(keyData), strData, strlen(strData), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
+}
+
+- (NSString *)hmacSHA384StringWithKey:(NSString *)key{
+    const char *keyData = key.UTF8String;
+    const char *strData = self.UTF8String;
+    uint8_t buffer[CC_SHA384_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA384, keyData, strlen(keyData), strData, strlen(strData), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA384_DIGEST_LENGTH];
+}
+
+- (NSString *)hmacSHA512StringWithKey:(NSString *)key {
+    const char *keyData = key.UTF8String;
+    const char *strData = self.UTF8String;
+    uint8_t buffer[CC_SHA512_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA512, keyData, strlen(keyData), strData, strlen(strData), buffer);
+    return [self stringFromBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
+}
 
 /// 返回二进制 Bytes 流的字符串表示形式
 /// @param bytes 二进制 Bytes 数组
@@ -208,4 +287,5 @@
     }
     return [strM copy];
 }
+
 @end

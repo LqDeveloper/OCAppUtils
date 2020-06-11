@@ -21,10 +21,6 @@
     return [self getSizeFromSize:CGSizeMake(0, height) font:font].width;
 }
 
-- (NSRange)range{
-    return  NSMakeRange(0, self.length);
-}
-
 - (NSData *)data{
     return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
@@ -32,6 +28,21 @@
 -(NSDictionary *)json{
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
+
+
+- (NSRange)range{
+    return  NSMakeRange(0, self.length);
+}
+
+-(NSString *)base64Decoded{
+    NSData *data =  [[NSData alloc]initWithBase64EncodedString:self options:0];
+    return  [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)base64Encoded{
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    return [data base64EncodedStringWithOptions:0];
 }
 
 -(NSString *)removeSpace{
