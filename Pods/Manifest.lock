@@ -15,20 +15,25 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - ReactiveObjC (3.1.1)
+  - YTKNetwork (3.0.0):
+    - AFNetworking/NSURLSession (~> 4.0)
 
 DEPENDENCIES:
   - AFNetworking
   - ReactiveObjC (~> 3.1.1)
+  - YTKNetwork
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - ReactiveObjC
+    - YTKNetwork
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  YTKNetwork: 0587ce85fda2e2c591405089cc9aaa61649aa5ed
 
-PODFILE CHECKSUM: 6feab62e3e8c8bd0bc47aeafc0a6f619a958ca2d
+PODFILE CHECKSUM: 920155959f640b0526473347775950133fb55dd5
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

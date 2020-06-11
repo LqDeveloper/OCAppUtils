@@ -6,6 +6,7 @@ target 'OCAppUtils' do
   use_frameworks!
   pod 'AFNetworking'
   pod 'ReactiveObjC', '~> 3.1.1'
+  pod 'YTKNetwork'
   # Pods for OCAppUtils
 
   target 'OCAppUtilsTests' do
