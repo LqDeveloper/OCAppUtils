@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CommonCrypto/CommonCrypto.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Encryption)
@@ -82,6 +82,33 @@ NS_ASSUME_NONNULL_BEGIN
 /// 128个字符的HMAC SHA512散列字符串
 /// @param key key
 - (NSString *)hmacSHA512StringWithKey:(NSString *)key;
+
+/// 对称加密
+/// @param algorithm 加密类型
+/// @param keySize key的长度
+/// @param blockSize iv的长度
+/// @param keyString key
+/// @param iv 初始化向量
+- (NSString *)encryptType:(CCAlgorithm)algorithm keySize:(int)keySize blockSize:(int)blockSize keyString:(NSString *)keyString iv:(NSData * _Nullable)iv;
+
+/// 对称解密
+/// @param algorithm 解密类型
+/// @param keySize key的长度
+/// @param blockSize iv的长度
+/// @param keyString key
+/// @param iv 初始化向量
+- (NSString *)decryptType:(CCAlgorithm)algorithm keySize:(int)keySize blockSize:(int)blockSize keyString:(NSString *)keyString iv:(NSData * _Nullable)iv;
+
+
+/// AES加密
+/// @param keyString key
+/// @param iv 初始化向量(8个字节)
+-(NSString *)aesEncryptWithKeyString:(NSString *)keyString iv:(NSData * _Nullable)iv;
+
+/// AES解密
+/// @param keyString key
+/// @param iv 初始化向量(8个字节)
+-(NSString *)aesDecryptWithKeyString:(NSString *)keyString iv:(NSData * _Nullable)iv;
 @end
 
 NS_ASSUME_NONNULL_END

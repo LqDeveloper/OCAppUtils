@@ -7,10 +7,8 @@
 //
 
 #import "NSString+Encryption.h"
-#import <CommonCrypto/CommonCrypto.h>
+
 @implementation NSString (Encryption)
-
-
 - (NSString *)md5{
     const char *str = self.UTF8String;
     uint8_t buffer[CC_MD5_DIGEST_LENGTH];
@@ -288,4 +286,108 @@
     return [strM copy];
 }
 
+- (NSString *)encryptType:(CCAlgorithm)algorithm keySize:(int)keySize blockSize:(int)blockSize keyString:(NSString *)keyString iv:(NSData * _Nullable)iv{
+    // 设置秘钥
+    NSData *keyData = [keyString dataUsingEncoding:NSUTF8StringEncoding];
+    uint8_t cKey[keySize];
+    bzero(cKey, sizeof(cKey));
+    [keyData getBytes:cKey length:keySize];
+    
+    // 设置iv
+    uint8_t cIv[blockSize];
+    bzero(cIv, blockSize);
+    int option = 0;
+    if (iv) {
+        [iv getBytes:cIv length:blockSize];
+        option = kCCOptionPKCS7Padding;
+    } else {
+        option = kCCOptionPKCS7Padding | kCCOptionECBMode;
+    }
+    
+    // 设置输出缓冲区
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    size_t bufferSize = [data length] + blockSize;
+    void *buffer = malloc(bufferSize);
+    
+    // 开始加密
+    size_t encryptedSize = 0;
+    //加密解密都是它 -- CCCrypt
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+                                          algorithm,
+                                          option,
+                                          cKey,
+                                          keySize,
+                                          cIv,
+                                          [data bytes],
+                                          [data length],
+                                          buffer,
+                                          bufferSize,
+                                          &encryptedSize);
+    
+    NSData *result = nil;
+    if (cryptStatus == kCCSuccess) {
+        result = [NSData dataWithBytesNoCopy:buffer length:encryptedSize];
+    } else {
+        free(buffer);
+        NSLog(@"[错误] 加密失败|状态编码: %d", cryptStatus);
+    }
+    
+    return [result base64EncodedStringWithOptions:0];
+}
+- (NSString *)decryptType:(CCAlgorithm)algorithm keySize:(int)keySize blockSize:(int)blockSize keyString:(NSString *)keyString iv:(NSData * _Nullable)iv{
+    // 设置秘钥
+    NSData *keyData = [keyString dataUsingEncoding:NSUTF8StringEncoding];
+    uint8_t cKey[keySize];
+    bzero(cKey, sizeof(cKey));
+    [keyData getBytes:cKey length:keySize];
+    
+    // 设置iv
+    uint8_t cIv[blockSize];
+    bzero(cIv, blockSize);
+    int option = 0;
+    if (iv) {
+        [iv getBytes:cIv length:blockSize];
+        option = kCCOptionPKCS7Padding;
+    } else {
+        option = kCCOptionPKCS7Padding | kCCOptionECBMode;
+    }
+    
+    // 设置输出缓冲区
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self options:0];
+    size_t bufferSize = [data length] + blockSize;
+    void *buffer = malloc(bufferSize);
+    
+    // 开始解密
+    size_t decryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+                                          algorithm,
+                                          option,
+                                          cKey,
+                                          keySize,
+                                          cIv,
+                                          [data bytes],
+                                          [data length],
+                                          buffer,
+                                          bufferSize,
+                                          &decryptedSize);
+    
+    NSData *result = nil;
+    if (cryptStatus == kCCSuccess) {
+        result = [NSData dataWithBytesNoCopy:buffer length:decryptedSize];
+    } else {
+        free(buffer);
+        NSLog(@"[错误] 解密失败|状态编码: %d", cryptStatus);
+    }
+    
+    return [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)aesEncryptWithKeyString:(NSString *)keyString iv:(NSData * _Nullable)iv{
+    return [self encryptType:kCCAlgorithmAES keySize:kCCKeySizeAES128 blockSize:kCCBlockSizeAES128 keyString:keyString iv:iv];
+}
+
+
+- (NSString *)aesDecryptWithKeyString:(NSString *)keyString iv:(NSData * _Nullable)iv{
+    return [self decryptType:kCCAlgorithmAES keySize:kCCKeySizeAES128 blockSize:kCCBlockSizeAES128 keyString:keyString iv:iv];
+}
 @end

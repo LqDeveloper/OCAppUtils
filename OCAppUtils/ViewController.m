@@ -102,7 +102,9 @@
     NSLog(@"%@",path.fileSHA384Hash);
     //21a171aed9c537b227e1c542ba10d347192ac468d8eedfadd9d3dc35661167406ef852dfc06cd961567cc5d3ce659ed91dc4e4a9ede262e003be13abe3022265
     NSLog(@"%@",path.fileSHA512Hash);
-    
+    NSString *encryt = [@"1234" aesEncryptWithKeyString:@"key" iv:nil];
+    NSLog(@"%@",encryt);
+    NSLog(@"%@",[encryt aesDecryptWithKeyString:@"key" iv:nil]);
 }
 
 -(void)clicBtn{
