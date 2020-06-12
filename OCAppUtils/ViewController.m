@@ -102,9 +102,24 @@
     NSLog(@"%@",path.fileSHA384Hash);
     //21a171aed9c537b227e1c542ba10d347192ac468d8eedfadd9d3dc35661167406ef852dfc06cd961567cc5d3ce659ed91dc4e4a9ede262e003be13abe3022265
     NSLog(@"%@",path.fileSHA512Hash);
-    NSString *encryt = [@"1234" aesEncryptWithKeyString:@"key" iv:nil];
-    NSLog(@"%@",encryt);
-    NSLog(@"%@",[encryt aesDecryptWithKeyString:@"key" iv:nil]);
+   
+    
+    NSString *key  = @"key";
+    NSString *value  = @"这是加密的内容";
+    NSString *iv  = @"key";
+    NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *valueData = [value dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *ivData =[iv dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData *en = [valueData aesEncryptWithKeyData:keyData ivData:ivData operation:AESEncrypt keySize:KeySize256];
+    NSData *de = [en aesEncryptWithKeyData:keyData ivData:ivData operation:AESDecrypt keySize:KeySize256];
+    NSLog(@"%@", [en base64EncodedStringWithOptions:0]);
+    NSLog(@"%@", [[NSString alloc]initWithData:de encoding:NSUTF8StringEncoding]);
+    
+    NSData *en1 = [valueData aesEncryptWithKey:key ivStr:iv operation:AESEncrypt keySize:KeySize256];
+    NSData *de1 = [en1 aesEncryptWithKey:key ivStr:iv operation:AESDecrypt keySize:KeySize256];
+    NSLog(@"%@", [en1 base64EncodedStringWithOptions:0]);
+    NSLog(@"%@", [[NSString alloc]initWithData:de1 encoding:NSUTF8StringEncoding]);
 }
 
 -(void)clicBtn{
