@@ -9,7 +9,7 @@
 #import "UIScrollView+LQCategory.h"
 
 @implementation UIScrollView (LQCategory)
-- (UIImage *)screenshot{
+- (UIImage *)contentScreenshot{
     UIGraphicsBeginImageContextWithOptions(self.contentSize, false, 0);
     CGContextRef context =  UIGraphicsGetCurrentContext();
     CGRect previousFrame = self.frame;

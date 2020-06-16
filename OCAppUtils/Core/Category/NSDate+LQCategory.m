@@ -110,11 +110,11 @@
 }
 
 - (NSDate *)yesterday{
-    return [self.calendar dateByAddingUnit:NSCalendarUnitDay value:-1 toDate:self options:0];
+    return [self dateByAddingUnit:NSCalendarUnitDay value:-1];
 }
 
 - (NSDate *)tomorrow{
-    return [self.calendar dateByAddingUnit:NSCalendarUnitDay value:1 toDate:self options:0];
+    return [self dateByAddingUnit:NSCalendarUnitDay value:1];
 }
 
 - (NSTimeInterval)unixTimestamp{
@@ -123,6 +123,10 @@
 
 - (NSString *)dateString{
     return [self dateWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+}
+
+- (BOOL)isEqualWithDate:(NSDate *)date{
+    return [self compare:[NSDate date]] == NSOrderedSame;
 }
 
 - (NSString *)dateWithFormat:(NSString *)format{
@@ -155,6 +159,10 @@
         return YES;
     }
     return NO;
+}
+
+- (NSDate *)dateByAddingUnit:(NSCalendarUnit)unit value:(NSInteger)value{
+    return [self.calendar dateByAddingUnit:unit value:value toDate:self options:NSCalendarMatchNextTime];
 }
 
 @end

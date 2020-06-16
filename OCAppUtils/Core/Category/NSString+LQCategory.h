@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy,readonly)NSString *removeSpace;
 ///移除开头和结尾的空格
 @property(nonatomic,copy,readonly)NSString *trimmedText;
+/// 字符串反转
+@property(nonatomic,copy,readonly)NSString *reverse;
 /// 是否包含字母
 @property(nonatomic,assign,readonly)BOOL hasLetters;
 /// 是否包含数字

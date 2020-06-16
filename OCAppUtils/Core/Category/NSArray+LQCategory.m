@@ -13,6 +13,10 @@
     return self.count == 0;
 }
 
+- (NSArray *)reverse{
+    return [[self reverseObjectEnumerator]allObjects];
+}
+
 -(NSArray *)mapToOthers:(id  _Nonnull (^)(id _Nonnull))block{
     if (!block||self.count == 0) {
         return @[];

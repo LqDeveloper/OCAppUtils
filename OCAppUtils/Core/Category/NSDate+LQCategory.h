@@ -69,6 +69,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 将日期转为字符串 yyyy-MM-dd HH:mm:ss
 @property(nonatomic,copy,readonly)NSString *dateString;
 
+
+/// 判断两个日期是否相等
+/// @param date 日期
+-(BOOL)isEqualWithDate:(NSDate *)date;
+
 /// 时间格式化
 /// @param format 例如：yyyy-MM-dd HH:mm:ss
 -(NSString *)dateWithFormat:(NSString *)format;
@@ -93,6 +98,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param startDate 开始实际
 /// @param endDate 结束时间
 -(BOOL)isBetweenStartDate:(NSDate*)startDate endDate:(NSDate *)endDate;
+
+/// 增加时间
+/// @param unit NSCalendarUnit
+/// @param value value
+- (nullable NSDate *)dateByAddingUnit:(NSCalendarUnit)unit value:(NSInteger)value;
 @end
 
 NS_ASSUME_NONNULL_END

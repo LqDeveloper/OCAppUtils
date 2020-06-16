@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23F847088024BE8F75EA9354 /* Pods_OCAppUtils_OCAppUtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A62B11A911626ABE387A0A /* Pods_OCAppUtils_OCAppUtilsUITests.framework */; };
+		510E83632498BFE2008F3797 /* AppKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 510E83622498BFE2008F3797 /* AppKeychainManager.m */; };
 		5122AD30238F62AA00392321 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD2F238F62AA00392321 /* AppDelegate.m */; };
 		5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD32238F62AA00392321 /* SceneDelegate.m */; };
 		5122AD36238F62AA00392321 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD35238F62AA00392321 /* ViewController.m */; };
@@ -85,6 +86,8 @@
 		15848135CB18157C5C5F56CB /* Pods-OCAppUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtils.release.xcconfig"; path = "Target Support Files/Pods-OCAppUtils/Pods-OCAppUtils.release.xcconfig"; sourceTree = "<group>"; };
 		342A0EA8B9FCA9A8C020E9CD /* Pods-OCAppUtils-OCAppUtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtils-OCAppUtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-OCAppUtils-OCAppUtilsUITests/Pods-OCAppUtils-OCAppUtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		510184789D4003A9CD240B6B /* Pods-OCAppUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtilsTests.release.xcconfig"; path = "Target Support Files/Pods-OCAppUtilsTests/Pods-OCAppUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+		510E83612498BFE2008F3797 /* AppKeychainManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKeychainManager.h; sourceTree = "<group>"; };
+		510E83622498BFE2008F3797 /* AppKeychainManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKeychainManager.m; sourceTree = "<group>"; };
 		5122AD2B238F62A900392321 /* OCAppUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCAppUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5122AD2E238F62AA00392321 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5122AD2F238F62AA00392321 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				513890B723911FC60086960D /* NetworkManagerViewController.m */,
 				51A0F96C2474D11900970C86 /* AppDispatch.h */,
 				51A0F96D2474D11900970C86 /* AppDispatch.m */,
+				510E83612498BFE2008F3797 /* AppKeychainManager.h */,
+				510E83622498BFE2008F3797 /* AppKeychainManager.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -731,6 +736,7 @@
 				5138908C239104650086960D /* UITableView+LQCategory.m in Sources */,
 				5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */,
 				51E3D293238FD78D0074449B /* UIImage+LQCategory.m in Sources */,
+				510E83632498BFE2008F3797 /* AppKeychainManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

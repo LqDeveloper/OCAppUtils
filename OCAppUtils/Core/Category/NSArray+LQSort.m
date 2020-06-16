@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2020/5/21.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 #import "NSArray+LQSort.h"

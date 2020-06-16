@@ -120,6 +120,13 @@
     NSData *de1 = [en1 aesEncryptWithKey:key ivStr:iv operation:AESDecrypt keySize:KeySize256];
     NSLog(@"%@", [en1 base64EncodedStringWithOptions:0]);
     NSLog(@"%@", [[NSString alloc]initWithData:de1 encoding:NSUTF8StringEncoding]);
+    
+    NSLog(@"%@",@"这是反转字符".reverse);
+    NSLog(@"%@",@[@1,@2,@3,@4,@5].reverse);
+    NSDate *date = [NSDate date];
+    NSLog(@"%@",date);
+    date = [date dateByAddingUnit:NSCalendarUnitDay value:20];
+    NSLog(@"%@",date);
 }
 
 -(void)clicBtn{

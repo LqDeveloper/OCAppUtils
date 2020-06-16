@@ -33,11 +33,11 @@ IB_DESIGNABLE
 }
 
 - (UIImage *)screenshot{
-    UIGraphicsBeginImageContextWithOptions(self.layer.frame.size, false, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self.layer renderInContext:context];
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.width,self.height), NO, 0.0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return UIGraphicsGetImageFromCurrentImageContext();
+    return image;
 }
 
 

@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2020/5/19.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 #import "CALayer+LQCategory.h"

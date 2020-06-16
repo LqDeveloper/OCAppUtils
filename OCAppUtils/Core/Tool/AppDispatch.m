@@ -3,12 +3,16 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2020/5/20.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 #import "AppDispatch.h"
 
 @implementation AppDispatch
++ (dispatch_queue_t)main{
+    return dispatch_get_main_queue();
+}
+
 +(dispatch_queue_t)serialQueue:(const char *_Nullable)label{
     return dispatch_queue_create(label, DISPATCH_QUEUE_SERIAL);
 }

@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSArray <__covariant ObjectType> (LQCategory)
 /// 数组是否为空
 @property(nonatomic,assign,readonly)BOOL isEmpty;
-
+/// 反转数组
+@property(nonatomic,copy,readonly)NSArray<ObjectType> *reverse;
 
 /// 将内部对象映射为其他类型
 /// @param block 回调函数

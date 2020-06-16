@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2020/5/20.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDispatch : NSObject
+/// 主线程队列
++(dispatch_queue_main_t)main;
 /// 串行队列
 +(dispatch_queue_t)serialQueue:(const char *_Nullable)label;
 /// 并发队列

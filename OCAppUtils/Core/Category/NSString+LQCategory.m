@@ -59,6 +59,14 @@
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (NSString *)reverse{
+    NSMutableString *string = [NSMutableString stringWithCapacity:self.length];
+    for (NSInteger i = self.length - 1; i >= 0; i--) {
+        [string appendString:[self substringWithRange:NSMakeRange(i, 1)]];
+    }
+    return string;
+}
+
 - (BOOL)hasLetters{
     NSRange range = [self rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet] options:NSNumericSearch range:self.range];
     if (range.location == NSNotFound) {

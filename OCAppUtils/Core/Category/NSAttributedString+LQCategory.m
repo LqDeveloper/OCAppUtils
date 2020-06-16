@@ -3,7 +3,7 @@
 //  OCAppUtils
 //
 //  Created by Quan Li on 2020/5/20.
-//  Copyright © 2020 williamoneilchina. All rights reserved.
+//  Copyright © 2020 Quan Li. All rights reserved.
 //
 
 #import "NSAttributedString+LQCategory.h"
