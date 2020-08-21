@@ -31,7 +31,10 @@
     [self.view addSubview:top];
     [top setImage:ImageLocationTop space:10];
 
-    UIButton * bottom= [UIButton buttonWithTitle:@"下边" titleColor:[UIColor redColor] backgroundColor:[UIColor orangeColor] normalImage:@"image.jpg"];
+    UIButton * bottom= [UIButton buttonWithType:UIButtonTypeCustom];
+    [bottom setTitle:@"下边" forState:UIControlStateNormal];
+    bottom.backgroundColor = [UIColor orangeColor];
+    //[UIButton buttonWithTitle:@"下边" titleColor:[UIColor redColor] backgroundColor:[UIColor orangeColor] normalImage:@"image.jpg"];
     bottom.frame = CGRectMake(100, 410, 80, 80);
     [self.view addSubview:bottom];
     [bottom setImage:ImageLocationBottom space:10];

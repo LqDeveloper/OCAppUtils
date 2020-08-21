@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "OCAppUtils"
-  spec.version      = "0.0.8"
+  spec.version      = "0.0.9"
   spec.summary      = "OC Tools"
   spec.description  = <<-DESC
                       Extensions, base classes, tools commonly used in iOS development

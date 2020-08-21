@@ -146,7 +146,7 @@
     CGFloat titleWidth = self.titleLabel.bounds.size.width;
     CGFloat titleHeight = self.titleLabel.bounds.size.height;
     CGFloat insetAmount = space / 2;
-    
+    CGFloat width = self.frame.size.width;
     if (location == ImageLocationLeft) {
         self.imageEdgeInsets = UIEdgeInsetsMake(0,-insetAmount, 0, insetAmount);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, insetAmount, 0, -insetAmount);
@@ -154,11 +154,11 @@
         self.imageEdgeInsets = UIEdgeInsetsMake(0,(titleWidth + insetAmount), 0, -(titleWidth + insetAmount));
         self.titleEdgeInsets = UIEdgeInsetsMake(0,-(imageWidth + insetAmount), 0, (imageWidth + insetAmount));
     }else if (location == ImageLocationTop){
-        self.imageEdgeInsets = UIEdgeInsetsMake(-(imageHeight/2 + insetAmount), titleWidth/2, (imageHeight/2 + insetAmount), -(titleWidth/2));
-        self.titleEdgeInsets = UIEdgeInsetsMake((titleHeight/2 + insetAmount), -(imageWidth/2), -(titleHeight/2 + insetAmount), imageWidth/2);
+        self.imageEdgeInsets = UIEdgeInsetsMake(-titleHeight - insetAmount,(width - imageWidth)/2, 0, (width - imageWidth)/2 - titleWidth);
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, -imageWidth - insetAmount, 0);
     }else if (location == ImageLocationBottom){
-        self.imageEdgeInsets = UIEdgeInsetsMake((imageHeight/2 + insetAmount), titleWidth/2, -(imageHeight/2 + insetAmount), -(titleWidth/2));
-        self.titleEdgeInsets = UIEdgeInsetsMake(-(titleHeight/2 + insetAmount), -(imageWidth/2), (titleHeight/2 + insetAmount), imageWidth/2);
+        self.imageEdgeInsets = UIEdgeInsetsMake(0, (width - imageWidth)/2 , -titleHeight - insetAmount, (width - imageWidth)/2 - titleWidth);
+        self.titleEdgeInsets = UIEdgeInsetsMake(-imageHeight - insetAmount, -imageWidth, 0, 0);
     }
 }
 
