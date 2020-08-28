@@ -49,7 +49,7 @@ IB_DESIGNABLE
     return self.navigationController.isNavigationBarHidden;
 }
 
-- (void)showAlert:(NSString *)title message:(NSString *)message cancleTitle:(NSString *)cancleTitle cancleBlock:(void (^)(void))cancleCallBack okTitle:(NSString *)okTitle okBlock:(void (^)(void))okCallBack{
+- (void)showAlert:(NSString *)title message:(NSString *)message okTitle:(NSString *)okTitle okBlock:(void (^)(void))okCallBack cancleTitle:(NSString *)cancleTitle cancleBlock:(void (^)(void))cancleCallBack{
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:cancleTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

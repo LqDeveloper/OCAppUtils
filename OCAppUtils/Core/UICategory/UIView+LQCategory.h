@@ -10,7 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// <#Description#>
 @interface UIView (LQCategory)
 /// 边框颜色
 @property(nonatomic,strong)IBInspectable UIColor* borderColor;

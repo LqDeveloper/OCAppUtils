@@ -17,36 +17,121 @@
     return [[self reverseObjectEnumerator]allObjects];
 }
 
--(NSArray *)mapToOthers:(id  _Nonnull (^)(id _Nonnull))block{
-    if (!block||self.count == 0) {
-        return @[];
-    }
-    NSMutableArray *arr = [NSMutableArray array];
-    for (id item in self) {
-        [arr addObject:block(item)];
-    }
-    return [arr copy];
+
+-(void)bk_each:(void (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        block(obj);
+    }];
 }
 
--(void)forEachObject:(void (^)(id _Nonnull))block{
-    if (!block||self.count == 0) {
-        return;
-    }
-    for (id item in self) {
-        block(item);
-    }
+- (void)bk_apply:(void (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    [self enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        block(obj);
+    }];
 }
 
--(NSArray *)filterObject:(BOOL (^)(id _Nonnull))block{
-    if (!block||self.count == 0) {
-        return self;
-    }
-    NSMutableArray *arr = [NSMutableArray array];
-    for (id item in self) {
-        if (block(item)) {
-            [arr addObject:item];
+- (id)bk_match:(BOOL (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    NSUInteger index = [self indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return block(obj);
+    }];
+    
+    if (index == NSNotFound)
+        return nil;
+    
+    return self[index];
+}
+
+- (NSArray *)bk_select:(BOOL (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    return [self objectsAtIndexes:[self indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return block(obj);
+    }]];
+}
+
+- (NSArray *)bk_reject:(BOOL (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    return [self bk_select:^BOOL(id obj) {
+        return !block(obj);
+    }];
+}
+
+
+- (NSArray *)bk_map:(id  _Nonnull (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        id value = block(obj) ?: [NSNull null];
+        [result addObject:value];
+    }];
+    return result;
+}
+
+- (NSArray *)bk_compact:(id  _Nullable (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        id value = block(obj);
+        if(value)
+            {
+            [result addObject:value];
+            }
+    }];
+    return result;
+}
+
+- (BOOL)bk_any:(BOOL (^)(id _Nonnull))block{
+    return [self bk_match:block] != nil;
+}
+
+- (BOOL)bk_none:(BOOL (^)(id _Nonnull))block{
+    return [self bk_match:block] == nil;
+}
+
+- (BOOL)bk_all:(BOOL (^)(id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    __block BOOL result = YES;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (!block(obj)) {
+            result = NO;
+            *stop = YES;
         }
-    }
-    return [arr copy];
+    }];
+    return result;
+}
+
+- (BOOL)bk_corresponds:(NSArray *)list withBlock:(BOOL (^)(id _Nonnull, id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    __block BOOL result = NO;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (idx < list.count) {
+            id obj2 = list[idx];
+            result = block(obj, obj2);
+        } else {
+            result = NO;
+        }
+        *stop = !result;
+    }];
+    return result;
+}
+
+- (NSInteger)bk_reduceInteger:(NSInteger)initial withBlock:(NSInteger (^)(NSInteger, id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    __block NSInteger result = initial;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        result = block(result, obj);
+    }];
+    return result;
+}
+
+- (CGFloat)bk_reduceFloat:(CGFloat)initial withBlock:(CGFloat (^)(CGFloat, id _Nonnull))block{
+    NSParameterAssert(block != nil);
+    __block CGFloat result = initial;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        result = block(result, obj);
+    }];
+    return result;
 }
 @end

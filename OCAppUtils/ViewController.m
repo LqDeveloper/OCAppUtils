@@ -17,6 +17,151 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self testDic];
+}
+
+-(void)testDic{
+    NSDictionary<NSString *,NSNumber *>  *dic = @{@"key1":@1,@"key2":@2,@"key3":@3,@"key4":@4,@"key5":@5,@"key6":@6};
+    NSLog(@"********bk_each********");
+    [dic bk_each:^(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        NSLog(@"key:%@ - value:%@",key,obj);
+    }];
+    
+    NSLog(@"********bk_apply********");
+    [dic bk_apply:^(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        NSLog(@"key:%@ - value:%@",key,obj);
+    }];
+    NSLog(@"********bk_match********");
+    NSNumber *n = [dic bk_match:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return  [key isEqualToString:@"key3"];
+    }];
+    NSLog(@"%@",n);
+    NSLog(@"********bk_select********");
+    NSDictionary<NSString *,NSNumber *>  *dic1 = [dic bk_select:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return obj.intValue > 3;
+    }];
+    NSLog(@"%@",dic1);
+    NSLog(@"********bk_reject********");
+    NSDictionary<NSString *,NSNumber *>  *dic2 = [dic bk_reject:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return obj.intValue > 3;
+    }];
+    NSLog(@"%@",dic2);
+    NSLog(@"********bk_map********");
+    NSDictionary<NSString *,NSString *>  *dic3 = [dic bk_map:^id _Nonnull(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return [obj.stringValue stringByAppendingFormat:@"-bk_map"];;
+    }];
+    NSLog(@"%@",dic3);
+    NSLog(@"********bk_map********");
+    BOOL b1 = [dic bk_any:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return obj.intValue > 10;
+    }];
+    NSLog(@"%d",b1);
+    BOOL b2 = [dic bk_all:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return obj.intValue > 10;
+    }];
+    NSLog(@"%d",b2);
+    BOOL b3 = [dic bk_none:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return obj.intValue > 10;
+    }];
+    NSLog(@"%d",b3);
+    
+    NSMutableDictionary<NSString *,NSNumber *>  *dic4 = [NSMutableDictionary dictionaryWithDictionary:dic];
+//    [dic4 bk_performSelect:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+//        return obj.intValue > 3;
+//    }];
+//    [dic4 bk_performReject:^BOOL(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+//        return obj.intValue > 3;
+//    }];
+    [dic4 bk_performMap:^id _Nonnull(NSString * _Nonnull key, NSNumber * _Nonnull obj) {
+        return [obj.stringValue stringByAppendingFormat:@" - bk_performMap"];
+    }];
+    NSLog(@"%@",dic4);
+}
+
+-(void)testArray{
+    NSArray<NSNumber *> *arr1 = @[@1,@2,@3,@4,@5,@6];
+    NSLog(@"********bk_each********");
+    [arr1 bk_each:^(NSNumber * _Nonnull obj) {
+        NSLog(@"%@",obj);
+    }];
+    NSLog(@"*******bk_apply*********");
+    [arr1 bk_apply:^(NSNumber * _Nonnull obj) {
+        NSLog(@"%@",obj);
+    }];
+    NSLog(@"*******bk_match*********");
+    NSNumber *r1 = [arr1 bk_match:^BOOL(NSNumber * _Nonnull obj) {
+        return [obj isEqualToNumber:@3];
+    }];
+    NSLog(@"%@",r1);
+    NSLog(@"*******bk_match*********");
+    NSArray<NSNumber *> *arr2 = [arr1 bk_select:^BOOL(NSNumber * _Nonnull obj) {
+        return obj.intValue > 3;
+    }];
+    NSLog(@"%@",arr2);
+    NSLog(@"*******bk_reject*********");
+    NSArray<NSNumber *> *arr3 = [arr1 bk_reject:^BOOL(NSNumber * _Nonnull obj) {
+        return obj.intValue > 3;
+    }];
+    NSLog(@"%@",arr3);
+    NSLog(@"*******bk_map*********");
+    NSArray<NSString *> *arr4 = [arr1 bk_map:^id _Nonnull(NSNumber * _Nonnull obj) {
+        return [obj.stringValue stringByAppendingFormat:@" - bk_map"];;
+    }];
+    NSLog(@"%@",arr4);
+    NSLog(@"*******bk_compact*********");
+    NSArray<NSString *> *arr5 = [arr1 bk_compact:^id _Nonnull(NSNumber * _Nonnull obj) {
+        if (obj.intValue < 3) {
+            return nil;
+        }else{
+            return [obj.stringValue stringByAppendingFormat:@" - bk_compact"];;
+        }
+    }];
+    NSLog(@"%@",arr5);
+    NSLog(@"*******bk_any*********");
+    BOOL b1 = [arr1 bk_any:^BOOL(NSNumber * _Nonnull obj) {
+        return obj.intValue > 10;
+    }];
+    NSLog(@"%d",b1);
+    NSLog(@"*******bk_none*********");
+    BOOL b2 = [arr1 bk_none:^BOOL(NSNumber * _Nonnull obj) {
+        return obj.intValue > 10;
+    }];
+    NSLog(@"%d",b2);
+    NSLog(@"*******bk_all*********");
+    BOOL b3 = [arr1 bk_all:^BOOL(NSNumber * _Nonnull obj) {
+        return obj.intValue > 10;
+    }];
+    NSLog(@"%d",b3);
+    NSLog(@"*******bk_corresponds*********");
+    BOOL b4 = [arr1 bk_corresponds:@[@1,@2,@3,@4,@5] withBlock:^BOOL(NSNumber * _Nonnull obj1, NSNumber * _Nonnull obj2) {
+        return obj1.intValue == obj2.intValue;
+    }];
+    NSLog(@"%d",b4);
+    NSLog(@"*******bk_reduceInteger*********");
+    NSInteger a = [arr1 bk_reduceInteger:0 withBlock:^NSInteger(NSInteger result, NSNumber * _Nonnull obj) {
+        return result + obj.intValue;
+    }];
+    NSLog(@"%ld",(long)a);
+    NSLog(@"*******bk_reduceInteger*********");
+    CGFloat b = [arr1 bk_reduceFloat:0 withBlock:^CGFloat(CGFloat result, NSNumber * _Nonnull obj) {
+        return result + obj.floatValue;
+    }];
+    NSLog(@"%f",b);
+    NSLog(@"*******bk_performSelect*********");
+    NSMutableArray<NSNumber *> * arr = [NSMutableArray arrayWithArray:arr1];
+    //    [arr bk_performSelect:^BOOL(NSNumber * _Nonnull obj) {
+    //        return obj.intValue > 3;
+    //    }];
+//    [arr bk_performReject:^BOOL(NSNumber * _Nonnull obj) {
+//        return obj.intValue > 3;
+//    }];
+    [arr bk_performMap:^id _Nonnull(NSNumber * _Nonnull obj) {
+        return [obj.stringValue stringByAppendingFormat:@"bk_performMap"];
+    }];
+    NSLog(@"%@",arr);
+}
+
+-(void)demo{
     UIButton * left= [UIButton buttonWithTitle:@"左边" titleColor:[UIColor redColor] backgroundColor:[UIColor greenColor] normalImage:@"image.jpg"];
     left.frame = CGRectMake(100, 100, 80, 80);
     [self.view addSubview:left];
@@ -25,12 +170,12 @@
     right.frame = CGRectMake(100, 200, 80, 80);
     [self.view addSubview:right];
     [right setImage:ImageLocationRight space:10];
-
+    
     UIButton * top = [UIButton buttonWithTitle:@"上边" titleColor:[UIColor redColor] backgroundColor:[UIColor cyanColor] normalImage:@"image.jpg"];
     top.frame = CGRectMake(100, 310, 80, 80);
     [self.view addSubview:top];
     [top setImage:ImageLocationTop space:10];
-
+    
     UIButton * bottom= [UIButton buttonWithType:UIButtonTypeCustom];
     [bottom setTitle:@"下边" forState:UIControlStateNormal];
     bottom.backgroundColor = [UIColor orangeColor];
@@ -40,28 +185,16 @@
     [bottom setImage:ImageLocationBottom space:10];
     [bottom skt_setShadowWithColor:[UIColor blueColor] andAlpha:0.5 andX:0 andY:10 andBlur:40 andSpread:10];
     [bottom addTarget:self action:@selector(clicBtn) forControlEvents:UIControlEventTouchUpInside];
-//    BOOL isTrue = NO;
-//    lq_guard(isTrue)else{
-//        NSLog(@"这是guard");
-//    }
-//
-    
-    NSArray<NSString *> *arr = @[@"4",@"2",@"5",@"1",@"3",@"6",@"8",@"7"];
-    [arr forEachObject:^(NSString * _Nonnull item ) {
-        NSLog(@"%@",item);
-    }];
+    //    BOOL isTrue = NO;
+    //    lq_guard(isTrue)else{
+    //        NSLog(@"这是guard");
+    //    }
+    //
     
     NSString *str = @"这是啥";
     [str forEach:^(NSString * _Nonnull item) {
         NSLog(@"%@",item);
     }];
-    
-    NSArray *arr1 = [arr sortWithType:BubbleSort AndBlock:^BOOL(NSString * _Nonnull str1, NSString * _Nonnull str2) {
-        NSInteger num1 = str1.integerValue;
-        NSInteger num2 = str2.integerValue;
-        return num1 < num2;
-    }];
-    NSLog(@"%@",arr1);
     
     [self checkNotificationEnable:^(BOOL isSuccess) {
         
@@ -105,7 +238,7 @@
     NSLog(@"%@",path.fileSHA384Hash);
     //21a171aed9c537b227e1c542ba10d347192ac468d8eedfadd9d3dc35661167406ef852dfc06cd961567cc5d3ce659ed91dc4e4a9ede262e003be13abe3022265
     NSLog(@"%@",path.fileSHA512Hash);
-   
+    
     
     NSString *key  = @"key";
     NSString *value  = @"这是加密的内容";
@@ -134,20 +267,20 @@
 
 -(void)clicBtn{
     if (@available(iOS 10.3, *)) {
-           [self showAppReview];
-       } else {
-           // Fallback on earlier versions
-       }
+        [self showAppReview];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-   
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [UIApplication pushToitunesWithAppId:@"498354805"];
-//    [self showAppStoreInApp:@"498354805"];
+    //    [UIApplication pushToitunesWithAppId:@"498354805"];
+    //    [self showAppStoreInApp:@"498354805"];
     if (@available(iOS 10.3, *)) {
         [UIApplication showAppReview];
     } else {

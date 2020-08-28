@@ -27,11 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 显示alert
 /// @param title 标题
 /// @param message 描述
-/// @param cancleTitle 取消按钮标题
-/// @param cancleCallBack 取消回调
 /// @param okTitle 确认按钮标题
 /// @param okCallBack 确认回调
-- (void)showAlert:(NSString *)title message:(NSString *)message cancleTitle:(NSString *)cancleTitle cancleBlock:(void(^)(void)) cancleCallBack okTitle:(NSString *)okTitle okBlock:(void(^)(void))okCallBack;
+/// @param cancleTitle 取消按钮标题
+/// @param cancleCallBack 取消回调
+- (void)showAlert:(NSString *)title message:(NSString *)message okTitle:(NSString *)okTitle okBlock:(void(^)(void))okCallBack cancleTitle:(NSString *)cancleTitle cancleBlock:(void(^)(void)) cancleCallBack ;
 
 /// 显示alert
 /// @param title 标题

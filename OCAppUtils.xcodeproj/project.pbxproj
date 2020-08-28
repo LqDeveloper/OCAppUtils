@@ -40,6 +40,8 @@
 		5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5145687E238FB4BD008BFA59 /* BaseCustomTableViewController.m */; };
 		51456886238FBEA0008BFA59 /* UIView+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456885238FBEA0008BFA59 /* UIView+LQCategory.m */; };
 		51456889238FC74E008BFA59 /* UIViewController+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51456888238FC74E008BFA59 /* UIViewController+LQCategory.m */; };
+		519C325A24F8FA0100171811 /* NSMutableArray+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 519C325924F8FA0100171811 /* NSMutableArray+LQCategory.m */; };
+		519C325D24F8FC3400171811 /* NSMutableDictionary+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 519C325C24F8FC3400171811 /* NSMutableDictionary+LQCategory.m */; };
 		51A0F96B2474C17600970C86 /* NSAttributedString+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F96A2474C17600970C86 /* NSAttributedString+LQCategory.m */; };
 		51A0F96E2474D11900970C86 /* AppDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0F96D2474D11900970C86 /* AppDispatch.m */; };
 		51A4C94A2394E301006355AE /* NSObject+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A4C9492394E301006355AE /* NSObject+LQCategory.m */; };
@@ -153,6 +155,10 @@
 		51456885238FBEA0008BFA59 /* UIView+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LQCategory.m"; sourceTree = "<group>"; };
 		51456887238FC74E008BFA59 /* UIViewController+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LQCategory.h"; sourceTree = "<group>"; };
 		51456888238FC74E008BFA59 /* UIViewController+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LQCategory.m"; sourceTree = "<group>"; };
+		519C325824F8FA0100171811 /* NSMutableArray+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LQCategory.h"; sourceTree = "<group>"; };
+		519C325924F8FA0100171811 /* NSMutableArray+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LQCategory.m"; sourceTree = "<group>"; };
+		519C325B24F8FC3400171811 /* NSMutableDictionary+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+LQCategory.h"; sourceTree = "<group>"; };
+		519C325C24F8FC3400171811 /* NSMutableDictionary+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+LQCategory.m"; sourceTree = "<group>"; };
 		51A0F9692474C17600970C86 /* NSAttributedString+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+LQCategory.h"; sourceTree = "<group>"; };
 		51A0F96A2474C17600970C86 /* NSAttributedString+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+LQCategory.m"; sourceTree = "<group>"; };
 		51A0F96C2474D11900970C86 /* AppDispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDispatch.h; sourceTree = "<group>"; };
@@ -422,8 +428,12 @@
 				5ABD345F2491003400729170 /* NSString+Encryption.m */,
 				5138909B23911DD60086960D /* NSArray+LQCategory.h */,
 				5138909C23911DD60086960D /* NSArray+LQCategory.m */,
+				519C325824F8FA0100171811 /* NSMutableArray+LQCategory.h */,
+				519C325924F8FA0100171811 /* NSMutableArray+LQCategory.m */,
 				5138909E23911E340086960D /* NSDictionary+LQCategory.h */,
 				5138909F23911E340086960D /* NSDictionary+LQCategory.m */,
+				519C325B24F8FC3400171811 /* NSMutableDictionary+LQCategory.h */,
+				519C325C24F8FC3400171811 /* NSMutableDictionary+LQCategory.m */,
 				513890A123911E6B0086960D /* NSData+LQCategory.h */,
 				513890A223911E6B0086960D /* NSData+LQCategory.m */,
 				513890A423911E930086960D /* NSDate+LQCategory.h */,
@@ -711,6 +721,7 @@
 				51456876238FADEB008BFA59 /* BaseViewController.m in Sources */,
 				51A0F96E2474D11900970C86 /* AppDispatch.m in Sources */,
 				5145687F238FB4BD008BFA59 /* BaseCustomTableViewController.m in Sources */,
+				519C325D24F8FC3400171811 /* NSMutableDictionary+LQCategory.m in Sources */,
 				5138908F239104D60086960D /* UICollectionView+LQCategory.m in Sources */,
 				51E3D2A2238FD8EC0074449B /* UIStackView+LQCategory.m in Sources */,
 				51456873238FAD70008BFA59 /* BaseNavigationController.m in Sources */,
@@ -731,6 +742,7 @@
 				51A4C94A2394E301006355AE /* NSObject+LQCategory.m in Sources */,
 				51456889238FC74E008BFA59 /* UIViewController+LQCategory.m in Sources */,
 				51E3D29F238FD8BB0074449B /* UIScrollView+LQCategory.m in Sources */,
+				519C325A24F8FA0100171811 /* NSMutableArray+LQCategory.m in Sources */,
 				5145687C238FB241008BFA59 /* BaseWebViewController.m in Sources */,
 				51E3D287238FD51A0074449B /* UIApplication+LQCategory.m in Sources */,
 				5138908C239104650086960D /* UITableView+LQCategory.m in Sources */,
