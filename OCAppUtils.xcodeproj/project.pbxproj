@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23F847088024BE8F75EA9354 /* Pods_OCAppUtils_OCAppUtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A62B11A911626ABE387A0A /* Pods_OCAppUtils_OCAppUtilsUITests.framework */; };
+		510B51FC24FC85EA007B285B /* NSSet+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 510B51FB24FC85EA007B285B /* NSSet+LQCategory.m */; };
+		510B51FF24FC89AE007B285B /* UIControl+LQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 510B51FE24FC89AE007B285B /* UIControl+LQCategory.m */; };
 		510E83632498BFE2008F3797 /* AppKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 510E83622498BFE2008F3797 /* AppKeychainManager.m */; };
 		5122AD30238F62AA00392321 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD2F238F62AA00392321 /* AppDelegate.m */; };
 		5122AD33238F62AA00392321 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5122AD32238F62AA00392321 /* SceneDelegate.m */; };
@@ -88,6 +90,10 @@
 		15848135CB18157C5C5F56CB /* Pods-OCAppUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtils.release.xcconfig"; path = "Target Support Files/Pods-OCAppUtils/Pods-OCAppUtils.release.xcconfig"; sourceTree = "<group>"; };
 		342A0EA8B9FCA9A8C020E9CD /* Pods-OCAppUtils-OCAppUtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtils-OCAppUtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-OCAppUtils-OCAppUtilsUITests/Pods-OCAppUtils-OCAppUtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		510184789D4003A9CD240B6B /* Pods-OCAppUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAppUtilsTests.release.xcconfig"; path = "Target Support Files/Pods-OCAppUtilsTests/Pods-OCAppUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+		510B51FA24FC85EA007B285B /* NSSet+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSSet+LQCategory.h"; sourceTree = "<group>"; };
+		510B51FB24FC85EA007B285B /* NSSet+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSSet+LQCategory.m"; sourceTree = "<group>"; };
+		510B51FD24FC89AE007B285B /* UIControl+LQCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+LQCategory.h"; sourceTree = "<group>"; };
+		510B51FE24FC89AE007B285B /* UIControl+LQCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+LQCategory.m"; sourceTree = "<group>"; };
 		510E83612498BFE2008F3797 /* AppKeychainManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKeychainManager.h; sourceTree = "<group>"; };
 		510E83622498BFE2008F3797 /* AppKeychainManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKeychainManager.m; sourceTree = "<group>"; };
 		5122AD2B238F62A900392321 /* OCAppUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCAppUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +394,8 @@
 				51BED7ED2473E12A000FC37D /* CALayer+LQCategory.m */,
 				51389095239111290086960D /* UIColor+LQCategory.h */,
 				51389096239111290086960D /* UIColor+LQCategory.m */,
+				510B51FD24FC89AE007B285B /* UIControl+LQCategory.h */,
+				510B51FE24FC89AE007B285B /* UIControl+LQCategory.m */,
 			);
 			path = UICategory;
 			sourceTree = "<group>";
@@ -426,6 +434,8 @@
 				51389099239113690086960D /* NSString+LQCategory.m */,
 				5ABD345E2491003400729170 /* NSString+Encryption.h */,
 				5ABD345F2491003400729170 /* NSString+Encryption.m */,
+				510B51FA24FC85EA007B285B /* NSSet+LQCategory.h */,
+				510B51FB24FC85EA007B285B /* NSSet+LQCategory.m */,
 				5138909B23911DD60086960D /* NSArray+LQCategory.h */,
 				5138909C23911DD60086960D /* NSArray+LQCategory.m */,
 				519C325824F8FA0100171811 /* NSMutableArray+LQCategory.h */,
@@ -710,12 +720,14 @@
 				51E3D284238FD2AE0074449B /* UIWindow+LQCategory.m in Sources */,
 				513890B223911F610086960D /* AppKeyboardObserver.m in Sources */,
 				51C5C35C247614690042FC55 /* NSArray+LQSort.m in Sources */,
+				510B51FC24FC85EA007B285B /* NSSet+LQCategory.m in Sources */,
 				51456879238FAF09008BFA59 /* BaseTableViewController.m in Sources */,
 				513890A923911EC30086960D /* NSURL+LQCategory.m in Sources */,
 				513890A023911E340086960D /* NSDictionary+LQCategory.m in Sources */,
 				51BED7EE2473E12A000FC37D /* CALayer+LQCategory.m in Sources */,
 				5138909D23911DD60086960D /* NSArray+LQCategory.m in Sources */,
 				51E3D28D238FD7510074449B /* UIButton+LQCategory.m in Sources */,
+				510B51FF24FC89AE007B285B /* UIControl+LQCategory.m in Sources */,
 				51456886238FBEA0008BFA59 /* UIView+LQCategory.m in Sources */,
 				513890A623911E930086960D /* NSDate+LQCategory.m in Sources */,
 				51456876238FADEB008BFA59 /* BaseViewController.m in Sources */,

@@ -8,6 +8,23 @@
 
 #import "NSObject+LQCategory.h"
 #import <objc/runtime.h>
+
+@import ObjectiveC.runtime;
+
+#pragma mark - Weak support
+
+@interface WeakAssociatedObject : NSObject
+
+@property (nonatomic, weak) id value;
+
+@end
+
+@implementation WeakAssociatedObject
+
+@end
+
+
+
 @implementation NSObject (LQCategory)
 + (NSString *)className{
     return NSStringFromClass([self class]);
@@ -41,4 +58,80 @@
     return mArray.copy;
 }
 
+
+- (void)bk_associateValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)bk_atomicallyAssociateValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)bk_associateCopyOfValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)bk_atomicallyAssociateCopyOfValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)bk_weaklyAssociateValue:(__autoreleasing id)value withKey:(const void *)key{
+    WeakAssociatedObject *assoc = objc_getAssociatedObject(self, key);
+    if (!assoc) {
+        assoc = [WeakAssociatedObject new];
+        [self bk_associateValue:assoc withKey:key];
+    }
+    assoc.value = value;
+}
+
+- (id)bk_associatedValueForKey:(const void *)key{
+    id value = objc_getAssociatedObject(self, key);
+    if (value && [value isKindOfClass:[WeakAssociatedObject class]]) {
+        return [(WeakAssociatedObject *)value value];
+    }
+    return value;
+}
+
+- (void)bk_removeAllAssociatedObjects{
+    objc_removeAssociatedObjects(self);
+}
+
+#pragma mark - Class Methods
+
++ (void)bk_associateValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
++ (void)bk_atomicallyAssociateValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_RETAIN);
+}
+
++ (void)bk_associateCopyOfValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
++ (void)bk_atomicallyAssociateCopyOfValue:(id)value withKey:(const void *)key{
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_COPY);
+}
+
++ (void)bk_weaklyAssociateValue:(__autoreleasing id)value withKey:(const void *)key{
+    WeakAssociatedObject *assoc = objc_getAssociatedObject(self, key);
+    if (!assoc) {
+        assoc = [WeakAssociatedObject new];
+        [self bk_associateValue:assoc withKey:key];
+    }
+    assoc.value = value;
+}
+
++ (id)bk_associatedValueForKey:(const void *)key{
+    id value = objc_getAssociatedObject(self, key);
+    if (value && [value isKindOfClass:[WeakAssociatedObject class]]) {
+        return [(WeakAssociatedObject *)value value];
+    }
+    return value;
+}
+
++ (void)bk_removeAllAssociatedObjects{
+    objc_removeAssociatedObjects(self);
+}
 @end
